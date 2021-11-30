@@ -1,13 +1,47 @@
 package com.oliverr.jfmt;
 
+import java.util.ArrayList;
+
 public class Formatter {
 
     public static String stringf(String text, Object... args) {
         if(args == null) return  text;
         if(args.length == 0) return  text;
 
+        ArrayList<String> fmtChars = new ArrayList<>();
+
+        for(int i = 0; i < text.length() - 1; i++) {
+            if(text.charAt(i) == '%') {
+                if(text.charAt(i + 1) == 'v') fmtChars.add("%v");
+                else if(text.charAt(i + 1) == 's') fmtChars.add("%s");
+                else if(text.charAt(i + 1) == 'b') fmtChars.add("%b");
+            }
+        }
+
         String res = text;
-        for(Object arg : args) res = Replace.first(res, "%v", arg.toString());
+        for(int i = 0; i < fmtChars.size(); i++) {
+            if(i < args.length) {
+                if(fmtChars.get(i).equals("%v")) {
+                    res = Replace.first(res, "%v", args[i].toString());
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%s")) {
+                    if(args[i] instanceof String) {
+                        res = Replace.first(res, "%s", (String)args[i]);
+                    }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%b")) {
+                    if(args[i] instanceof Boolean) {
+                        if(((Boolean) args[i])) res = Replace.first(res, "%b", "true");
+                        else res = Replace.first(res, "%b", "false");
+                    }
+                    //continue;
+                }
+            }
+        }
 
         return res;
     }
