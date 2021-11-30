@@ -2,10 +2,26 @@
 🪄 This is a simple Java library that allows you to format strings more easily.<br>
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
+## Format Characters:
+`%v`: Value in the default (`.toString()`) format<br>
+`%s`: String in a default format<br>
+`%b`: Boolean (**true**/**false**)<br>
+
+Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
+**For example:**
+```java
+String result = Formatter.stringf("This is a boolean: %b", "true");
+//Result:
+//This is a boolean: %b
+//Because the passed value is not a boolean but a string.
+//To make it work, you want to use it like this:
+String result = Formatter.stringf("This is a boolean: %b", true);
+```
+
 ## Formatter Examples:
 ### stringf
 ```java
-String result = Formatter.stringf("Hi %v! You are %v years old.", "Josh", 17);
+String result = Formatter.stringf("Hi %s! You are %v years old.", "Josh", 17);
 // Result:
 // Hi Josh! You are 17 years old.
 ```
