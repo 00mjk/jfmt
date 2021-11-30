@@ -1,3 +1,5 @@
+package com.oliverr.jfmt;
+
 public class Formatter {
 
     public static String stringf(String text, Object... args) {

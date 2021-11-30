@@ -1,3 +1,5 @@
+package com.oliverr.jfmt;
+
 public class Replace {
 
     public static String all(String text, String oldText, String newText) {
