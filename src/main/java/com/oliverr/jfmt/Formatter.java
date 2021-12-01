@@ -17,6 +17,7 @@ public class Formatter {
                 else if(text.charAt(i + 1) == 'S') fmtChars.add("%S");
                 else if(text.charAt(i + 1) == 'b') fmtChars.add("%b");
                 else if(text.charAt(i + 1) == 'd') fmtChars.add("%d");
+                else if(text.charAt(i + 1) == 'o') fmtChars.add("%o");
             }
         }
 
@@ -54,6 +55,16 @@ public class Formatter {
                     if(args[i] instanceof Number) {
                         if(args[i].toString().contains(".")) res = Replace.first(res, "%d", args[i].toString().split("\\.")[0]);
                         else res = Replace.first(res, "%d", args[i].toString());
+                    }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%o")) {
+                    if(args[i] instanceof Number) {
+                        int num;
+                        if(args[i].toString().contains(".")) num = Integer.parseInt(args[i].toString().split("\\.")[0]);
+                        else num = Integer.parseInt(args[i].toString());
+                        res = Replace.first(res, "%o", Integer.toBinaryString(num));
                     }
                     //continue;
                 }

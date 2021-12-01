@@ -33,6 +33,11 @@ public class FormatterTest {
         Assertions.assertEquals("This is a float too: 30", Formatter.stringf("This is a float too: %d", 30.3213435154));
         Assertions.assertEquals("Hi Josh! You are 17 years old.", Formatter.stringf("Hi %s! You are %d years old.", "Josh", 17));
 
+        Assertions.assertEquals("Binary: 1100", Formatter.stringf("Binary: %o", 12));
+        Assertions.assertEquals("NaN: %o", Formatter.stringf("NaN: %o", "asd"));
+        Assertions.assertEquals("1100", Formatter.stringf("%o", 12.3231));
+        Assertions.assertEquals("255: 11111111", Formatter.stringf("255: %o", 255));
+
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }
 
