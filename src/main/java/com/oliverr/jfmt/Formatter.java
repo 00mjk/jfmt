@@ -14,7 +14,9 @@ public class Formatter {
             if(text.charAt(i) == '%') {
                 if(text.charAt(i + 1) == 'v') fmtChars.add("%v");
                 else if(text.charAt(i + 1) == 's') fmtChars.add("%s");
+                else if(text.charAt(i + 1) == 'S') fmtChars.add("%S");
                 else if(text.charAt(i + 1) == 'b') fmtChars.add("%b");
+                else if(text.charAt(i + 1) == 'd') fmtChars.add("%d");
             }
         }
 
@@ -33,10 +35,25 @@ public class Formatter {
                     continue;
                 }
 
+                if(fmtChars.get(i).equals("%S")) {
+                    if(args[i] instanceof String) {
+                        res = Replace.first(res, "%S", ((String)args[i]).toUpperCase());
+                    }
+                    continue;
+                }
+
                 if(fmtChars.get(i).equals("%b")) {
                     if(args[i] instanceof Boolean) {
                         if(((Boolean) args[i])) res = Replace.first(res, "%b", "true");
                         else res = Replace.first(res, "%b", "false");
+                    }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%d")) {
+                    if(args[i] instanceof Number) {
+                        if(args[i].toString().contains(".")) res = Replace.first(res, "%d", args[i].toString().split("\\.")[0]);
+                        else res = Replace.first(res, "%d", args[i].toString());
                     }
                     //continue;
                 }
@@ -46,12 +63,8 @@ public class Formatter {
         return res;
     }
 
-    public static void printf(String text, Object... args) {
-        System.out.print(stringf(text, args));
-    }
+    public static void printf(String text, Object... args) { System.out.print(stringf(text, args)); }
 
-    public static void printfln(String text, Object... args) {
-        System.out.println(stringf(text, args));
-    }
+    public static void printfln(String text, Object... args) { System.out.println(stringf(text, args)); }
 
 }

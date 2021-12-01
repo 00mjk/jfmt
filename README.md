@@ -5,7 +5,9 @@ With this, you can also write colored outputs to the CLI with the ANSI Escape Co
 ## Format Characters:
 `%v`: Value in the default (`.toString()`) format<br>
 `%s`: String in a default format<br>
+`%S`: String in uppercase<br>
 `%b`: Boolean (**true**/**false**)<br>
+`%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
 
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
 **For example:**
@@ -21,7 +23,7 @@ String result = Formatter.stringf("This is a boolean: %b", true);
 ## Formatter Examples:
 ### stringf
 ```java
-String result = Formatter.stringf("Hi %s! You are %v years old.", "Josh", 17);
+String result = Formatter.stringf("Hi %s! You are %d years old.", "Josh", 17);
 // Result:
 // Hi Josh! You are 17 years old.
 ```
