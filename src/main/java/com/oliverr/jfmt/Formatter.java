@@ -1,11 +1,17 @@
 package com.oliverr.jfmt;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Formatter {
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
+    private static String format = "yyyy-MM-dd";
+
+    public static String getDateFormat() { return format; }
+    public static void setDateFormat(String format) { Formatter.format = format; }
 
     public static String stringf(String text, Object... args) {
         if(args == null) return  text;
@@ -24,6 +30,7 @@ public class Formatter {
                 else if(text.charAt(i + 1) == 'f') fmtChars.add("%f");
                 else if(text.charAt(i + 1) == 'F') fmtChars.add("%F");
                 else if(text.charAt(i + 1) == 'r') fmtChars.add("%r");
+                else if(text.charAt(i + 1) == 't') fmtChars.add("%t");
             }
         }
 
@@ -91,6 +98,14 @@ public class Formatter {
 
                 if(fmtChars.get(i).equals("%r")) {
                     res = Replace.first(res, "%r", reverse(args[i].toString()));
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%t")) {
+                    if(args[i] instanceof Date) {
+                        SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
+                        res = Replace.first(res, "%t", sdf.format((Date)args[i]));
+                    }
                     //continue;
                 }
             }

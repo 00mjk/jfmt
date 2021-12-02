@@ -1,9 +1,20 @@
 package com.oliverr.jfmt;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FormatterTest {
+
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+    @Before
+    public void init() {
+        Formatter.setDateFormat("yyyy-MM-dd");
+    }
 
     @Test
     public void testFormatter() {
@@ -51,6 +62,10 @@ public class FormatterTest {
         Assertions.assertEquals("Reversed: nhoJ", Formatter.stringf("Reversed: %r", "John"));
         Assertions.assertEquals("Reversed num: 32", Formatter.stringf("Reversed num: %r", 23));
         Assertions.assertEquals("eurt", Formatter.stringf("%r", true));
+
+        Assertions.assertEquals(sdf.format(new Date()), Formatter.stringf("%t", new Date()));
+        Assertions.assertEquals("Date: "+sdf.format(new Date()), Formatter.stringf("Date: %t", new Date()));
+        Assertions.assertEquals("Not a Date: %t", Formatter.stringf("Not a Date: %t", "asd"));
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }

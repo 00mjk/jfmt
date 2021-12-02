@@ -11,7 +11,8 @@ With this, you can also write colored outputs to the CLI with the ANSI Escape Co
 `%o`: Number in binary<br>
 `%f`: A float or a double number<br>
 `%F`: A float or a double number rounded to 2 decimal places<br>
-`%r`: String in a reversed format
+`%r`: String in a reversed format<br>
+`%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"
 
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
 **For example:**
@@ -22,6 +23,13 @@ String result = Formatter.stringf("This is a boolean: %b", "true");
 //Because the passed value is not a boolean but a string.
 //To make it work, you want to use it like this:
 String result = Formatter.stringf("This is a boolean: %b", true);
+```
+
+### You can modify the default date format:
+```java
+Formatter.setDateFormat("dd-MM-yyyy");
+Formatter.stringf("Date: %t", new Date());
+// Result: "Date: 02-12-2021" (ofc with the current date)
 ```
 
 ## Formatter Examples:
