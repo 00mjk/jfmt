@@ -39,11 +39,18 @@ public class FormatterTest {
         Assertions.assertEquals("255: 11111111", Formatter.stringf("255: %o", 255));
 
         Assertions.assertEquals("17", Formatter.stringf("%f", 17));
+        Assertions.assertEquals("17.1", Formatter.stringf("%f", 17.1));
         Assertions.assertEquals("Float: 20.32431", Formatter.stringf("Float: %f", 20.32431));
         Assertions.assertEquals("Rounded: 20.32", Formatter.stringf("Rounded: %F", 20.32431));
         Assertions.assertEquals("NaN: %f", Formatter.stringf("NaN: %f", "fe"));
         Assertions.assertEquals("NaN: %F", Formatter.stringf("NaN: %F", "fe"));
         Assertions.assertEquals("Two: 18.43131, 18.43", Formatter.stringf("Two: %f, %F", 18.43131, 18.43131));
+
+        Assertions.assertEquals("indulagorogaludni", Formatter.stringf("%r", "indulagorogaludni"));
+        Assertions.assertEquals("asdasd", Formatter.stringf("%r", "dsadsa"));
+        Assertions.assertEquals("Reversed: nhoJ", Formatter.stringf("Reversed: %r", "John"));
+        Assertions.assertEquals("Reversed num: 32", Formatter.stringf("Reversed num: %r", 23));
+        Assertions.assertEquals("eurt", Formatter.stringf("%r", true));
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }

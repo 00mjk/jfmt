@@ -23,6 +23,7 @@ public class Formatter {
                 else if(text.charAt(i + 1) == 'o') fmtChars.add("%o");
                 else if(text.charAt(i + 1) == 'f') fmtChars.add("%f");
                 else if(text.charAt(i + 1) == 'F') fmtChars.add("%F");
+                else if(text.charAt(i + 1) == 'r') fmtChars.add("%r");
             }
         }
 
@@ -85,6 +86,11 @@ public class Formatter {
                     if(args[i] instanceof Number) {
                         res = Replace.first(res, "%F", df.format(Double.parseDouble(args[i].toString())));
                     }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%r")) {
+                    res = Replace.first(res, "%r", reverse(args[i].toString()));
                     //continue;
                 }
             }
@@ -96,5 +102,11 @@ public class Formatter {
     public static void printf(String text, Object... args) { System.out.print(stringf(text, args)); }
 
     public static void printfln(String text, Object... args) { System.out.println(stringf(text, args)); }
+
+    private static String reverse(String s) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = s.length() - 1; i >= 0; i--) sb.append(s.charAt(i));
+        return sb.toString();
+    }
 
 }

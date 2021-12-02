@@ -10,7 +10,8 @@ With this, you can also write colored outputs to the CLI with the ANSI Escape Co
 `%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
 `%o`: Number in binary<br>
 `%f`: A float or a double number<br>
-`%F`: A float or a double number rounded to 2 decimal places
+`%F`: A float or a double number rounded to 2 decimal places<br>
+`%r`: String in a reversed format
 
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
 **For example:**
