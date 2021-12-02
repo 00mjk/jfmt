@@ -1,8 +1,11 @@
 package com.oliverr.jfmt;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Formatter {
+
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public static String stringf(String text, Object... args) {
         if(args == null) return  text;
@@ -18,6 +21,8 @@ public class Formatter {
                 else if(text.charAt(i + 1) == 'b') fmtChars.add("%b");
                 else if(text.charAt(i + 1) == 'd') fmtChars.add("%d");
                 else if(text.charAt(i + 1) == 'o') fmtChars.add("%o");
+                else if(text.charAt(i + 1) == 'f') fmtChars.add("%f");
+                else if(text.charAt(i + 1) == 'F') fmtChars.add("%F");
             }
         }
 
@@ -65,6 +70,20 @@ public class Formatter {
                         if(args[i].toString().contains(".")) num = Integer.parseInt(args[i].toString().split("\\.")[0]);
                         else num = Integer.parseInt(args[i].toString());
                         res = Replace.first(res, "%o", Integer.toBinaryString(num));
+                    }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%f")) {
+                    if(args[i] instanceof Number) {
+                        res = Replace.first(res, "%f", args[i].toString());
+                    }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%F")) {
+                    if(args[i] instanceof Number) {
+                        res = Replace.first(res, "%F", df.format(Double.parseDouble(args[i].toString())));
                     }
                     //continue;
                 }

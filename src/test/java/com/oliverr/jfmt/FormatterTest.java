@@ -38,6 +38,13 @@ public class FormatterTest {
         Assertions.assertEquals("1100", Formatter.stringf("%o", 12.3231));
         Assertions.assertEquals("255: 11111111", Formatter.stringf("255: %o", 255));
 
+        Assertions.assertEquals("17", Formatter.stringf("%f", 17));
+        Assertions.assertEquals("Float: 20.32431", Formatter.stringf("Float: %f", 20.32431));
+        Assertions.assertEquals("Rounded: 20.32", Formatter.stringf("Rounded: %F", 20.32431));
+        Assertions.assertEquals("NaN: %f", Formatter.stringf("NaN: %f", "fe"));
+        Assertions.assertEquals("NaN: %F", Formatter.stringf("NaN: %F", "fe"));
+        Assertions.assertEquals("Two: 18.43131, 18.43", Formatter.stringf("Two: %f, %F", 18.43131, 18.43131));
+
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }
 
