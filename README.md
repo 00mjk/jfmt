@@ -2,6 +2,12 @@
 🪄 This is a simple Java library that allows you to format strings more easily.<br>
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
+## Entities
+`&n`: Line break<br>
+`&N`: Double line break<br>
+`&t`: Current time in a default format<br>
+`&d`: Current date in a default format
+
 ## Format Characters:
 `%v`: Value in the default (`.toString()`) format<br>
 `%s`: String in a default format<br>
@@ -25,14 +31,15 @@ String result = Formatter.stringf("This is a boolean: %b", "true");
 String result = Formatter.stringf("This is a boolean: %b", true);
 ```
 
-### You can modify the default date format:
+### You can modify the default date and time format:
 ```java
 Formatter.setDateFormat("dd-MM-yyyy");
-Formatter.stringf("Date: %t", new Date());
-// Result: "Date: 02-12-2021" (ofc with the current date)
+Formatter.setTimeFormat("hh:mm:ss");
+Formatter.stringf("Hi %s! Date: &d, Time: &t", "John");
+// Result: "Hi John! Date: 03-12-2021, Time: 10:04:43" (ofc with the current date and time)
 ```
 
-## Formatter Examples:
+## Examples:
 ### stringf
 ```java
 String result = Formatter.stringf("Hi %s! You are %d years old.", "Josh", 17);

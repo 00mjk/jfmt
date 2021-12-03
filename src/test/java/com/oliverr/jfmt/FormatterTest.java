@@ -10,10 +10,12 @@ import java.util.Date;
 public class FormatterTest {
 
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat sdf2 = new SimpleDateFormat("hh:mm:ss");
 
     @Before
     public void init() {
         Formatter.setDateFormat("yyyy-MM-dd");
+        Formatter.setTimeFormat("hh:mm:ss");
     }
 
     @Test
@@ -66,6 +68,12 @@ public class FormatterTest {
         Assertions.assertEquals(sdf.format(new Date()), Formatter.stringf("%t", new Date()));
         Assertions.assertEquals("Date: "+sdf.format(new Date()), Formatter.stringf("Date: %t", new Date()));
         Assertions.assertEquals("Not a Date: %t", Formatter.stringf("Not a Date: %t", "asd"));
+
+        Assertions.assertEquals("Line break: \n", Formatter.stringf("Line break: &n"));
+        Assertions.assertEquals("Double: \n\n", Formatter.stringf("Double: &N"));
+        Assertions.assertEquals(sdf2.format(new Date()), Formatter.stringf("&t"));
+        Assertions.assertEquals(sdf.format(new Date()), Formatter.stringf("&d"));
+        Assertions.assertEquals("Number: 32.123", Formatter.stringf("%s: %f", "Number", 32.123));
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }

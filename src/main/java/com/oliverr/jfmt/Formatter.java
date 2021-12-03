@@ -9,12 +9,25 @@ public class Formatter {
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
     private static String format = "yyyy-MM-dd";
+    private static String time = "hh:mm:ss";
+
+    public static String getTimeFormat() { return time; }
+    public static void setTimeFormat(String time) { Formatter.time = time; }
 
     public static String getDateFormat() { return format; }
     public static void setDateFormat(String format) { Formatter.format = format; }
 
+    private static SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
+    private static SimpleDateFormat sdf2 = new SimpleDateFormat(getTimeFormat());
+
     public static String stringf(String text, Object... args) {
         if(args == null) return  text;
+
+        text = Replace.all(text, "&n", "\n");
+        text = Replace.all(text, "&N", "\n\n");
+        text = Replace.all(text, "&t", sdf2.format(new Date()));
+        text = Replace.all(text, "&d", sdf.format(new Date()));
+
         if(args.length == 0) return  text;
 
         ArrayList<String> fmtChars = new ArrayList<>();
@@ -35,6 +48,7 @@ public class Formatter {
         }
 
         String res = text;
+
         for(int i = 0; i < fmtChars.size(); i++) {
             if(i < args.length) {
                 if(fmtChars.get(i).equals("%v")) {
@@ -103,7 +117,6 @@ public class Formatter {
 
                 if(fmtChars.get(i).equals("%t")) {
                     if(args[i] instanceof Date) {
-                        SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
                         res = Replace.first(res, "%t", sdf.format((Date)args[i]));
                     }
                     //continue;
