@@ -28,6 +28,17 @@ public class Formatter {
         text = Replace.all(text, "&t", sdf2.format(new Date()));
         text = Replace.all(text, "&d", sdf.format(new Date()));
 
+        text = Replace.all(text, "$c", "©");
+        text = Replace.all(text, "$r", "®");
+        text = Replace.all(text, "$e", "∈");
+        text = Replace.all(text, "$p", "∏");
+        text = Replace.all(text, "$s", "∑");
+        text = Replace.all(text, "$tm", "™");
+        text = Replace.all(text, "$Ua", "↑");
+        text = Replace.all(text, "$Da", "↓");
+        text = Replace.all(text, "$La", "←");
+        text = Replace.all(text, "$Ra", "→");
+
         if(args.length == 0) return  text;
 
         ArrayList<String> fmtChars = new ArrayList<>();

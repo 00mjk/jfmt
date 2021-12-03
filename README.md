@@ -2,11 +2,22 @@
 🪄 This is a simple Java library that allows you to format strings more easily.<br>
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
-## Entities
+## Entities and symbols
 `&n`: Line break<br>
 `&N`: Double line break<br>
 `&t`: Current time in a default format<br>
-`&d`: Current date in a default format
+`&d`: Current date in a default format<br>
+<br>
+`$c`: Copyright (©)<br>
+`$r`: Registered trademark (®)<br>
+`$e`: Element of (∈)<br>
+`$p`: N-ary product (∏)<br>
+`$s`: N-ary summation (∑)<br>
+`$tm`: Trademark (™)<br>
+`$Ua`: Upwards Arrow (↑)<br>
+`$Da`: Downwards Arrow (↓)<br>
+`$La`: Leftwards Arrow (←)<br>
+`$Ra`: Rightwards Arrow (→)<br>
 
 ## Format Characters:
 `%v`: Value in the default (`.toString()`) format<br>
