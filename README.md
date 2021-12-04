@@ -27,7 +27,7 @@ With this, you can also write colored outputs to the CLI with the ANSI Escape Co
 `%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
 `%o`: Number in binary<br>
 `%f`: A float or a double number<br>
-`%F`: A float or a double number rounded to 2 decimal places<br>
+`%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
 `%r`: String in a reversed format<br>
 `%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"
 

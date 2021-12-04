@@ -54,10 +54,8 @@ public class FormatterTest {
         Assertions.assertEquals("17", Formatter.stringf("%f", 17));
         Assertions.assertEquals("17.1", Formatter.stringf("%f", 17.1));
         Assertions.assertEquals("Float: 20.32431", Formatter.stringf("Float: %f", 20.32431));
-        Assertions.assertEquals("Rounded: 20.32", Formatter.stringf("Rounded: %F", 20.32431));
         Assertions.assertEquals("NaN: %f", Formatter.stringf("NaN: %f", "fe"));
-        Assertions.assertEquals("NaN: %F", Formatter.stringf("NaN: %F", "fe"));
-        Assertions.assertEquals("Two: 18.43131, 18.43", Formatter.stringf("Two: %f, %F", 18.43131, 18.43131));
+        Assertions.assertEquals("Two: 18.43131, 18.43", Formatter.stringf("Two: %f, %f", 18.43131, 18.43));
 
         Assertions.assertEquals("indulagorogaludni", Formatter.stringf("%r", "indulagorogaludni"));
         Assertions.assertEquals("asdasd", Formatter.stringf("%r", "dsadsa"));
@@ -74,6 +72,15 @@ public class FormatterTest {
         Assertions.assertEquals(sdf2.format(new Date()), Formatter.stringf("&t"));
         Assertions.assertEquals(sdf.format(new Date()), Formatter.stringf("&d"));
         Assertions.assertEquals("Number: 32.123", Formatter.stringf("%s: %f", "Number", 32.123));
+
+        Assertions.assertEquals("13.12", Formatter.stringf("%f2", 13.12113211));
+        Assertions.assertEquals("13.134", Formatter.stringf("%f3", 13.1341211));
+        Assertions.assertEquals("20.32334, 20.3", Formatter.stringf("%f, %f1", 20.32334, 20.32334));
+        Assertions.assertEquals("NaN: %f5", Formatter.stringf("NaN: %f5", "NaN"));
+        Assertions.assertEquals("12.42345a", Formatter.stringf("%fa", 12.42345));
+        Assertions.assertEquals("13.12 13.134", Formatter.stringf("%f2 %f3", 13.12113211, 13.1341211));
+        Assertions.assertEquals("22", Formatter.stringf("%f0", 22.1221321331));
+        Assertions.assertEquals("22.1111111112", Formatter.stringf("%f92", 22.11111111111111));
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }

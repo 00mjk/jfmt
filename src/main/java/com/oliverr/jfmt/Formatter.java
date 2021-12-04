@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Formatter {
 
-    private static final DecimalFormat df = new DecimalFormat("0.00");
+    private static DecimalFormat df = new DecimalFormat("0.00");
     private static String format = "yyyy-MM-dd";
     private static String time = "hh:mm:ss";
 
@@ -51,8 +51,13 @@ public class Formatter {
                 else if(text.charAt(i + 1) == 'b') fmtChars.add("%b");
                 else if(text.charAt(i + 1) == 'd') fmtChars.add("%d");
                 else if(text.charAt(i + 1) == 'o') fmtChars.add("%o");
-                else if(text.charAt(i + 1) == 'f') fmtChars.add("%f");
-                else if(text.charAt(i + 1) == 'F') fmtChars.add("%F");
+                else if(text.charAt(i + 1) == 'f') {
+                    if(i + 2 < text.length() && "0123456789".contains(text.charAt(i + 2) + "")) {
+                        fmtChars.add("%f"+text.charAt(i + 2));
+                    } else {
+                        fmtChars.add("%f");
+                    }
+                }
                 else if(text.charAt(i + 1) == 'r') fmtChars.add("%r");
                 else if(text.charAt(i + 1) == 't') fmtChars.add("%t");
             }
@@ -114,9 +119,20 @@ public class Formatter {
                     continue;
                 }
 
-                if(fmtChars.get(i).equals("%F")) {
+                if(fmtChars.get(i).startsWith("%f") && fmtChars.get(i).length() == 3) {
                     if(args[i] instanceof Number) {
-                        res = Replace.first(res, "%F", df.format(Double.parseDouble(args[i].toString())));
+                        if("0123456789".contains(fmtChars.get(i).charAt(2)+"")) {
+                            int num = Integer.parseInt(fmtChars.get(i).charAt(2)+"");
+                            StringBuilder sb = new StringBuilder();
+                            if(num == 0) {
+                                res = Replace.first(res, "%f"+num, Math.round(Double.parseDouble(args[i].toString()))+"");
+                            } else {
+                                sb.append("0.");
+                                sb.append("0".repeat(Math.max(0, num)));
+                                df = new DecimalFormat(sb.toString());
+                                res = Replace.first(res, "%f"+num, df.format(Double.parseDouble(args[i].toString())));
+                            }
+                        }
                     }
                     continue;
                 }
