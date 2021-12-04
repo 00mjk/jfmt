@@ -2,6 +2,13 @@
 🪄 This is a simple Java library that allows you to format strings more easily.<br>
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
+## Shortcuts
+- [Entities and symbols](#entities-and-symbols)<br>
+- [Format Characters](#format-characters)
+  - [Modify the default date and time format](#you-can-modify-the-default-date-and-time-format)
+- [Examples](#examples)
+- [License](#license)
+
 ## Entities and symbols
 `&n`: Line break<br>
 `&N`: Double line break<br>
@@ -78,3 +85,6 @@ String result = Replace.first("I love beer with beer.", "beer", "water");
 // Result:
 // I love water with beer.
 ```
+
+## License
+[MIT](LICENSE)

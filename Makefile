@@ -14,6 +14,7 @@ run:
 	@echo Running target/$(APP)-$(VERSION).jar...
 	@java -jar target/$(APP)-$(VERSION).jar
 
+# Test
 test:
 ifeq ($(class),)
 	@echo Running all tests...
