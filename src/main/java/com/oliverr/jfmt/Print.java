@@ -1,6 +1,6 @@
 package com.oliverr.jfmt;
 
-import com.oliverr.jfmt.annotation.NotNull;
+import com.oliverr.jfmt.util.NotNull;
 
 public class Print {
 
@@ -81,6 +81,7 @@ public class Print {
             if(i == array.length - 1) System.out.print(array[i]);
             else System.out.print(array[i] + character);
         }
+        System.out.println();
     }
 
 }

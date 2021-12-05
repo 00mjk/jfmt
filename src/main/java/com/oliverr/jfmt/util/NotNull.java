@@ -1,4 +1,4 @@
-package com.oliverr.jfmt.annotation;
+package com.oliverr.jfmt.util;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

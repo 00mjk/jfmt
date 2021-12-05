@@ -1,13 +1,15 @@
 # JFMT - Java Formatter
-🪄 This is a simple Java library that allows you to format strings more easily.<br>
+🔬 This is a simple Java library that allows you to format strings more easily.<br>
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
-## Shortcuts
+## Table of Contents
 - [Entities and symbols](#entities-and-symbols)<br>
 - [Format Characters](#format-characters)
   - [Modify the default date and time format](#you-can-modify-the-default-date-and-time-format)
 - [Examples](#examples)
 - [License](#license)
+
+<hr>
 
 ## Entities and symbols
 `&n`: Line break<br>
@@ -58,6 +60,8 @@ Formatter.stringf("Hi %s! Date: &d, Time: &t", "John");
 // Result: "Hi John! Date: 03-12-2021, Time: 10:04:43" (ofc with the current date and time)
 ```
 
+<hr>
+
 ## Examples:
 ### stringf
 ```java
@@ -85,6 +89,19 @@ String result = Replace.all("I love beer with beer.", "beer", "water");
 String result = Replace.first("I love beer with beer.", "beer", "water");
 // Result:
 // I love water with beer.
+```
+
+### Print.array
+```java
+int[] array1 = { 1, 4, 6, 0, 12 };
+String[] array2 = { "a", "asd", "foo", "bar" };
+
+Print.array(array1, ", ");
+Print.array(array2, " --- ");
+
+// Output:
+// 1, 4, 6, 0, 12
+// a --- asd --- foo --- bar
 ```
 
 ## License
