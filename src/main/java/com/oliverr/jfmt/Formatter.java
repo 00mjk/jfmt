@@ -2,8 +2,7 @@ package com.oliverr.jfmt;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 public class Formatter {
 
@@ -60,6 +59,7 @@ public class Formatter {
                 }
                 else if(text.charAt(i + 1) == 'r') fmtChars.add("%r");
                 else if(text.charAt(i + 1) == 't') fmtChars.add("%t");
+                else if(text.charAt(i + 1) == 'a') fmtChars.add("%a");
             }
         }
 
@@ -146,6 +146,26 @@ public class Formatter {
                     if(args[i] instanceof Date) {
                         res = Replace.first(res, "%t", sdf.format((Date)args[i]));
                     }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%a")) {
+                    if(args[i] instanceof ArrayList) {
+                        ArrayList<Object> al = new ArrayList<>((ArrayList<Object>)args[i]);
+                        res = Replace.first(res, "%a", printArray(al));
+                    }
+                    else if(args[i] instanceof List) {
+                        List<Object> l = new ArrayList<>((List<Object>)args[i]);
+                        res = Replace.first(res, "%a", printArray(l));
+                    }
+                    else if(args[i] instanceof Set) {
+                        Set<Object> s = new HashSet<>((Set<Object>)args[i]);
+                        res = Replace.first(res, "%a", printArray(s));
+                    }
+                    else if(args[i] instanceof HashSet) {
+                        HashSet<Object> hs = new HashSet<>((HashSet<Object>)args[i]);
+                        res = Replace.first(res, "%a", printArray(hs));
+                    }
                     //continue;
                 }
             }
@@ -161,6 +181,38 @@ public class Formatter {
     private static String reverse(String s) {
         StringBuilder sb = new StringBuilder();
         for(int i = s.length() - 1; i >= 0; i--) sb.append(s.charAt(i));
+        return sb.toString();
+    }
+
+    private static String printArray(ArrayList<Object> array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[ ");
+        for(Object s : array) sb.append("\"").append(s.toString()).append("\" ");
+        sb.append("]");
+        return sb.toString();
+    }
+
+    private static String printArray(List<Object> array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[ ");
+        for(Object s : array) sb.append("\"").append(s.toString()).append("\" ");
+        sb.append("]");
+        return sb.toString();
+    }
+
+    private static String printArray(Set<Object> array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[ ");
+        for(Object s : array) sb.append("\"").append(s.toString()).append("\" ");
+        sb.append("]");
+        return sb.toString();
+    }
+
+    private static String printArray(HashSet<Object> array) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[ ");
+        for(Object s : array) sb.append("\"").append(s.toString()).append("\" ");
+        sb.append("]");
         return sb.toString();
     }
 

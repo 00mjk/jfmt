@@ -5,12 +5,17 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 
 public class FormatterTest {
 
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat sdf2 = new SimpleDateFormat("hh:mm:ss");
+
+    List<String> list = new ArrayList<>();
+    ArrayList<Integer> arrayList = new ArrayList<>();
+    Set<Double> set = new HashSet<>();
+    HashSet<Boolean> hashSet = new HashSet<>();
 
     @Before
     public void init() {
@@ -20,6 +25,15 @@ public class FormatterTest {
 
     @Test
     public void testFormatter() {
+        list.add("asd");
+        list.add("dsa");
+        arrayList.add(12);
+        arrayList.add(344);
+        set.add(44.43);
+        set.add(12.43);
+        hashSet.add(true);
+        hashSet.add(false);
+
         Assertions.assertEquals("Hi, my name is John!", Formatter.stringf("Hi, my name is %v!", "John"));
         Assertions.assertEquals("Hi Jason, my name is John!", Formatter.stringf("Hi %v, my name is %v!", "Jason", "John"));
         Assertions.assertEquals("He is %v years old.", Formatter.stringf("%v is %v years old.", "He"));
@@ -81,6 +95,13 @@ public class FormatterTest {
         Assertions.assertEquals("13.12 13.134", Formatter.stringf("%f2 %f3", 13.12113211, 13.1341211));
         Assertions.assertEquals("22", Formatter.stringf("%f0", 22.1221321331));
         Assertions.assertEquals("22.1111111112", Formatter.stringf("%f92", 22.11111111111111));
+
+        Assertions.assertEquals("ArrayList: [ \"12\" \"344\" ]", Formatter.stringf("ArrayList: %a", arrayList));
+        Assertions.assertEquals("[ \"asd\" \"dsa\" ]", Formatter.stringf("%a", list));
+        Assertions.assertEquals("[ \"44.43\" \"12.43\" ]", Formatter.stringf("%a", set));
+        Assertions.assertEquals("[ \"false\" \"true\" ]", Formatter.stringf("%a", hashSet));
+        Assertions.assertEquals("[ \"12\" \"344\" ], [ \"false\" \"true\" ]", Formatter.stringf("%a, %a", arrayList, hashSet));
+        Assertions.assertEquals("Not Array: %a", Formatter.stringf("Not Array: %a", "afe"));
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }

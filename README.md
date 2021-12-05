@@ -36,7 +36,8 @@ With this, you can also write colored outputs to the CLI with the ANSI Escape Co
 `%f`: A float or a double number<br>
 `%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
 `%r`: String in a reversed format<br>
-`%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"
+`%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"<br>
+`%a`: List, ArrayList, Set, HashSet in a format like this: [ "element1" "element2" ]
 
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
 **For example:**
