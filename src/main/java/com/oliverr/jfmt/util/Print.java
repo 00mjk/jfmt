@@ -1,10 +1,8 @@
-package com.oliverr.jfmt;
-
-import com.oliverr.jfmt.util.NotNull;
+package com.oliverr.jfmt.util;
 
 public class Print {
 
-    public static void array(@NotNull int[] array, String separator) {
+    public static void array(@NotNull int[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -12,7 +10,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull double[] array, String separator) {
+    public static void array(@NotNull double[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -20,7 +18,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull float[] array, String separator) {
+    public static void array(@NotNull float[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -28,7 +26,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull byte[] array, String separator) {
+    public static void array(@NotNull byte[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -36,7 +34,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull long[] array, String separator) {
+    public static void array(@NotNull long[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -44,7 +42,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull short[] array, String separator) {
+    public static void array(@NotNull short[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -52,7 +50,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull char[] array, String separator) {
+    public static void array(@NotNull char[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -60,7 +58,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull boolean[] array, String separator) {
+    public static void array(@NotNull boolean[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];
@@ -68,7 +66,7 @@ public class Print {
         printArray(res, separator);
     }
 
-    public static void array(@NotNull String[] array, String separator) {
+    public static void array(@NotNull String[] array, @Nullable String separator) {
         if(array == null) return;
         if(separator == null) separator = " ";
         String[] res = new String[array.length];

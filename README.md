@@ -1,4 +1,7 @@
 # JFMT - Java Formatter
+<img width="200px" src="./.github/images/logo.png" alt="Logo" title="Logo">
+<hr>
+
 🔬 This is a simple Java library that allows you to format strings more easily.<br>
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
@@ -105,4 +108,4 @@ Print.array(array2, " --- ");
 ```
 
 ## License
-[MIT](LICENSE)
+This library is licensed under the terms of the [MIT License](LICENSE)

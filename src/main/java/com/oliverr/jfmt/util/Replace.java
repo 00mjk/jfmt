@@ -1,4 +1,4 @@
-package com.oliverr.jfmt;
+package com.oliverr.jfmt.util;
 
 public class Replace {
 

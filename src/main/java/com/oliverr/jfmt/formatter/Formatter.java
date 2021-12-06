@@ -1,12 +1,14 @@
-package com.oliverr.jfmt;
+package com.oliverr.jfmt.formatter;
+
+import com.oliverr.jfmt.util.NotNull;
+import com.oliverr.jfmt.util.Replace;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Formatter {
+public class Formatter extends ReplaceEntities {
 
-    private static DecimalFormat df = new DecimalFormat("0.00");
     private static String format = "yyyy-MM-dd";
     private static String time = "hh:mm:ss";
 
@@ -16,32 +18,18 @@ public class Formatter {
     public static String getDateFormat() { return format; }
     public static void setDateFormat(String format) { Formatter.format = format; }
 
-    private static SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
-    private static SimpleDateFormat sdf2 = new SimpleDateFormat(getTimeFormat());
+    private static final SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
+    private static final SimpleDateFormat sdf2 = new SimpleDateFormat(getTimeFormat());
 
-    public static String stringf(String text, Object... args) {
+    public static String stringf(@NotNull String text, Object... args) {
         if(args == null) return  text;
 
-        text = Replace.all(text, "&n", "\n");
-        text = Replace.all(text, "&N", "\n\n");
-        text = Replace.all(text, "&t", sdf2.format(new Date()));
-        text = Replace.all(text, "&d", sdf.format(new Date()));
-
-        text = Replace.all(text, "$c", "©");
-        text = Replace.all(text, "$r", "®");
-        text = Replace.all(text, "$e", "∈");
-        text = Replace.all(text, "$p", "∏");
-        text = Replace.all(text, "$s", "∑");
-        text = Replace.all(text, "$tm", "™");
-        text = Replace.all(text, "$Ua", "↑");
-        text = Replace.all(text, "$Da", "↓");
-        text = Replace.all(text, "$La", "←");
-        text = Replace.all(text, "$Ra", "→");
+        ReplaceEntities re = new ReplaceEntities();
+        text = re.entitiesAndSymbols(text, getDateFormat(), getTimeFormat());
 
         if(args.length == 0) return  text;
 
         ArrayList<String> fmtChars = new ArrayList<>();
-
         for(int i = 0; i < text.length() - 1; i++) {
             if(text.charAt(i) == '%') {
                 if(text.charAt(i + 1) == 'v') fmtChars.add("%v");
@@ -67,6 +55,8 @@ public class Formatter {
 
         for(int i = 0; i < fmtChars.size(); i++) {
             if(i < args.length) {
+                if(args[i] == null) break;
+
                 if(fmtChars.get(i).equals("%v")) {
                     res = Replace.first(res, "%v", args[i].toString());
                     continue;
@@ -123,14 +113,12 @@ public class Formatter {
                     if(args[i] instanceof Number) {
                         if("0123456789".contains(fmtChars.get(i).charAt(2)+"")) {
                             int num = Integer.parseInt(fmtChars.get(i).charAt(2)+"");
-                            StringBuilder sb = new StringBuilder();
                             if(num == 0) {
                                 res = Replace.first(res, "%f"+num, Math.round(Double.parseDouble(args[i].toString()))+"");
                             } else {
-                                sb.append("0.");
-                                sb.append("0".repeat(Math.max(0, num)));
-                                df = new DecimalFormat(sb.toString());
-                                res = Replace.first(res, "%f"+num, df.format(Double.parseDouble(args[i].toString())));
+                                String sb = "0." + "0".repeat(Math.max(0, num));
+                                DecimalFormat df = new DecimalFormat(sb);
+                                res = Replace.first(res, "%f"+num, Replace.all(df.format(Double.parseDouble(args[i].toString())), ",", "."));
                             }
                         }
                     }
@@ -174,9 +162,9 @@ public class Formatter {
         return res;
     }
 
-    public static void printf(String text, Object... args) { System.out.print(stringf(text, args)); }
+    public static void printf(@NotNull String text, Object... args) { System.out.print(stringf(text, args)); }
 
-    public static void printfln(String text, Object... args) { System.out.println(stringf(text, args)); }
+    public static void printfln(@NotNull String text, Object... args) { System.out.println(stringf(text, args)); }
 
     private static String reverse(String s) {
         StringBuilder sb = new StringBuilder();

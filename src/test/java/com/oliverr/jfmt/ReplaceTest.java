@@ -1,5 +1,6 @@
 package com.oliverr.jfmt;
 
+import com.oliverr.jfmt.util.Replace;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

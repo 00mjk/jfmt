@@ -1,5 +1,7 @@
 package com.oliverr.jfmt;
 
+import com.oliverr.jfmt.formatter.Formatter;
+
 public class Main {
 
     private static final String github = "github.com/0l1v3rr/jfmt";
