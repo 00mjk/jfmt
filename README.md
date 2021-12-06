@@ -3,7 +3,6 @@
 <hr>
 
 🔬 This is a simple Java library that allows you to format strings more easily.<br>
-With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
 ## Table of Contents
 - [Formatter](#formatter)<br>
