@@ -6,15 +6,20 @@
 With this, you can also write colored outputs to the CLI with the ANSI Escape Codes.<br>
 
 ## Table of Contents
-- [Entities and symbols](#entities-and-symbols)<br>
-- [Format Characters](#format-characters)
-  - [Modify the default date and time format](#you-can-modify-the-default-date-and-time-format)
-- [Examples](#examples)
+- [Formatter](#formatter)<br>
+  - [Entities and symbols](#entities-and-symbols)
+  - [Format Characters](#format-characters)
+    - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
+- [Simple Formatter](#simple-formatter)
+- [Examples](docs/FORMAT-EXAMPLES.md)
 - [License](#license)
 
 <hr>
 
-## Entities and symbols
+## Formatter
+The `Formatter.stringf()` method is a function, which provides you the ability to format strings more easily.<br>
+It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols), and [Format Characters](#format-characters).
+### Entities and symbols
 `&n`: Line break<br>
 `&N`: Double line break<br>
 `&t`: Current time in a default format<br>
@@ -31,7 +36,7 @@ With this, you can also write colored outputs to the CLI with the ANSI Escape Co
 `$La`: Leftwards Arrow (←)<br>
 `$Ra`: Rightwards Arrow (→)<br>
 
-## Format Characters:
+### Format Characters
 `%v`: Value in the default (`.toString()`) format<br>
 `%s`: String in a default format<br>
 `%S`: String in uppercase<br>
@@ -55,7 +60,7 @@ String result = Formatter.stringf("This is a boolean: %b", "true");
 String result = Formatter.stringf("This is a boolean: %b", true);
 ```
 
-### You can modify the default date and time format:
+#### You can modify the default date and time format:
 ```java
 Formatter.setDateFormat("dd-MM-yyyy");
 Formatter.setTimeFormat("hh:mm:ss");
@@ -65,47 +70,21 @@ Formatter.stringf("Hi %s! Date: &d, Time: &t", "John");
 
 <hr>
 
-## Examples:
-### stringf
+## Simple Formatter
+The `SimpleFormatter`'s `stringf()` method is easier to use, and it's faster than the `Formatter.stringf()`, but it knows less.<br>
+It does not support entities and characters.<br>
+If you want to use this method, you pass the arguments like this: "{0}, {1}"<br>
+The 0th argument is the first argument, you pass.<br>
+You can use it multiple times.<br>
+**Example:**
 ```java
-String result = Formatter.stringf("Hi %s! You are %d years old.", "Josh", 17);
+String result = SimpleFormatter.stringf("{0} is {1} years old.", "John", 17);
 // Result:
-// Hi Josh! You are 17 years old.
+// John is 17 years old.
 ```
+See more examples [here](docs/FORMAT-EXAMPLES.md)
 
-### printf, printfln
-```java
-Formatter.printf("%v is a %v.", "John", "goat");
-// Output:
-// John is a goat.
-```
-
-### Replace.all
-```java
-String result = Replace.all("I love beer with beer.", "beer", "water");
-// Result:
-// I love water with water.
-```
-
-### Replace.first
-```java
-String result = Replace.first("I love beer with beer.", "beer", "water");
-// Result:
-// I love water with beer.
-```
-
-### Print.array
-```java
-int[] array1 = { 1, 4, 6, 0, 12 };
-String[] array2 = { "a", "asd", "foo", "bar" };
-
-Print.array(array1, ", ");
-Print.array(array2, " --- ");
-
-// Output:
-// 1, 4, 6, 0, 12
-// a --- asd --- foo --- bar
-```
+<hr>
 
 ## License
 This library is licensed under the terms of the [MIT License](LICENSE)

@@ -22,12 +22,12 @@ public class Formatter extends ReplaceEntities {
     private static final SimpleDateFormat sdf2 = new SimpleDateFormat(getTimeFormat());
 
     public static String stringf(@NotNull String text, Object... args) {
-        if(args == null) return  text;
+        if(args == null) return text;
 
         ReplaceEntities re = new ReplaceEntities();
         text = re.entitiesAndSymbols(text, getDateFormat(), getTimeFormat());
 
-        if(args.length == 0) return  text;
+        if(args.length == 0) return text;
 
         ArrayList<String> fmtChars = new ArrayList<>();
         for(int i = 0; i < text.length() - 1; i++) {
