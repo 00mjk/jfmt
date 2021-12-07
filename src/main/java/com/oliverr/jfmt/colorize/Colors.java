@@ -3,56 +3,56 @@ package com.oliverr.jfmt.colorize;
 public class Colors {
 
     // RESET
-    private final String reset = "\u001b[0m";
+    protected final String reset = "\u001b[0m";
     public String getReset() { return reset; }
 
     // TEXT COLORS
-    private final String textBlack = "\u001b[30m";
-    private final String textRed = "\u001b[31m";
-    private final String textGreen = "\u001b[32m";
-    private final String textYellow = "\u001b[33m";
-    private final String textBlue = "\u001b[34m";
-    private final String textMagenta = "\u001b[35m";
-    private final String textCyan = "\u001b[36m";
-    private final String textWhite = "\u001b[37m";
-    private final String textBrightBlack = "\u001b[30;1m";
-    private final String textBrightRed = "\u001b[31;1m";
-    private final String textBrightGreen = "\u001b[32;1m";
-    private final String textBrightYellow = "\u001b[33;1m";
-    private final String textBrightBlue = "\u001b[34;1m";
-    private final String textBrightMagenta = "\u001b[35;1m";
-    private final String textBrightCyan = "\u001b[36;1m";
-    private final String textBrightWhite = "\u001b[37;1m";
+    protected final String textBlack = "\u001b[30m";
+    protected final String textRed = "\u001b[31m";
+    protected final String textGreen = "\u001b[32m";
+    protected final String textYellow = "\u001b[33m";
+    protected final String textBlue = "\u001b[34m";
+    protected final String textMagenta = "\u001b[35m";
+    protected final String textCyan = "\u001b[36m";
+    protected final String textWhite = "\u001b[37m";
+    protected final String textBrightBlack = "\u001b[30;1m";
+    protected final String textBrightRed = "\u001b[31;1m";
+    protected final String textBrightGreen = "\u001b[32;1m";
+    protected final String textBrightYellow = "\u001b[33;1m";
+    protected final String textBrightBlue = "\u001b[34;1m";
+    protected final String textBrightMagenta = "\u001b[35;1m";
+    protected final String textBrightCyan = "\u001b[36;1m";
+    protected final String textBrightWhite = "\u001b[37;1m";
 
     // BACKGROUND COLORS
-    private final String backgroundBlack = "\u001b[40m";
-    private final String backgroundRed = "\u001b[41m";
-    private final String backgroundGreen = "\u001b[42m";
-    private final String backgroundYellow = "\u001b[43m";
-    private final String backgroundBlue = "\u001b[44m";
-    private final String backgroundMagenta = "\u001b[45m";
-    private final String backgroundCyan = "\u001b[46m";
-    private final String backgroundWhite = "\u001b[47m";
-    private final String backgroundBrightBlack = "\u001b[40;1m";
-    private final String backgroundBrightRed = "\u001b[41;1m";
-    private final String backgroundBrightGreen = "\u001b[42;1m";
-    private final String backgroundBrightYellow = "\u001b[43;1m";
-    private final String backgroundBrightBlue = "\u001b[44;1m";
-    private final String backgroundBrightMagenta = "\u001b[45;1m";
-    private final String backgroundBrightCyan = "\u001b[46;1m";
-    private final String backgroundBrightWhite = "\u001b[47;1m";
+    protected final String backgroundBlack = "\u001b[40m";
+    protected final String backgroundRed = "\u001b[41m";
+    protected final String backgroundGreen = "\u001b[42m";
+    protected final String backgroundYellow = "\u001b[43m";
+    protected final String backgroundBlue = "\u001b[44m";
+    protected final String backgroundMagenta = "\u001b[45m";
+    protected final String backgroundCyan = "\u001b[46m";
+    protected final String backgroundWhite = "\u001b[47m";
+    protected final String backgroundBrightBlack = "\u001b[40;1m";
+    protected final String backgroundBrightRed = "\u001b[41;1m";
+    protected final String backgroundBrightGreen = "\u001b[42;1m";
+    protected final String backgroundBrightYellow = "\u001b[43;1m";
+    protected final String backgroundBrightBlue = "\u001b[44;1m";
+    protected final String backgroundBrightMagenta = "\u001b[45;1m";
+    protected final String backgroundBrightCyan = "\u001b[46;1m";
+    protected final String backgroundBrightWhite = "\u001b[47;1m";
 
     // DECORATIONS
-    private final String bold = "\u001b[1m";
-    private final String underline = "\u001b[4m";
-    private final String reversed = "\u001b[7m";
+    protected final String bold = "\u001b[1m";
+    protected final String underline = "\u001b[4m";
+    protected final String reversed = "\u001b[7m";
 
     public String convertEnumTextColor(CustomColorFormat.TextColor color) {
         if(color == CustomColorFormat.TextColor.BLACK) return textBlack;
         if(color == CustomColorFormat.TextColor.RED) return textRed;
         if(color == CustomColorFormat.TextColor.GREEN) return textGreen;
         if(color == CustomColorFormat.TextColor.YELLOW) return textYellow;
-        if(color == CustomColorFormat.TextColor.BLUE) return textBlack;
+        if(color == CustomColorFormat.TextColor.BLUE) return textBlue;
         if(color == CustomColorFormat.TextColor.MAGENTA) return textMagenta;
         if(color == CustomColorFormat.TextColor.CYAN) return textCyan;
         if(color == CustomColorFormat.TextColor.WHITE) return textWhite;
@@ -72,7 +72,7 @@ public class Colors {
         if(color == CustomColorFormat.BackgroundColor.RED) return backgroundRed;
         if(color == CustomColorFormat.BackgroundColor.GREEN) return backgroundGreen;
         if(color == CustomColorFormat.BackgroundColor.YELLOW) return backgroundYellow;
-        if(color == CustomColorFormat.BackgroundColor.BLUE) return backgroundBlack;
+        if(color == CustomColorFormat.BackgroundColor.BLUE) return backgroundBlue;
         if(color == CustomColorFormat.BackgroundColor.MAGENTA) return backgroundMagenta;
         if(color == CustomColorFormat.BackgroundColor.CYAN) return backgroundCyan;
         if(color == CustomColorFormat.BackgroundColor.WHITE) return backgroundWhite;

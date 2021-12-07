@@ -1,8 +1,11 @@
 package com.oliverr.jfmt.colorize;
 
 import com.oliverr.jfmt.formatter.Formatter;
+import com.oliverr.jfmt.util.NotNull;
 
-public class CustomColorFormat {
+import java.io.Serializable;
+
+public class CustomColorFormat implements Serializable {
 
     private String color = "";
     private String bgColor = "";
@@ -34,13 +37,13 @@ public class CustomColorFormat {
         decoration = colors.convertEnumDecoration(dec);
     }
 
-    public String stringf(String text, Object... args) {
+    public String stringf(@NotNull String text, Object... args) {
         text = Formatter.stringf(text, args);
         return getColor()+getBgColor()+getDecoration()+text+colors.getReset();
     }
-    public String string(String text) { return getColor()+getBgColor()+getDecoration()+text+colors.getReset(); }
-    public void print(String text) { System.out.print(string(text)); }
-    public void println(String text) { System.out.println(string(text)); }
+    public String string(@NotNull String text) { return getColor()+getBgColor()+getDecoration()+text+colors.getReset(); }
+    public void print(@NotNull String text) { System.out.print(string(text)); }
+    public void println(@NotNull String text) { System.out.println(string(text)); }
 
     public enum TextColor {
         BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE,
@@ -57,12 +60,12 @@ public class CustomColorFormat {
     }
 
     public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
+    public void setColor(TextColor color) { this.color = colors.convertEnumTextColor(color); }
 
     public String getBgColor() { return bgColor; }
-    public void setBgColor(String bgColor) { this.bgColor = bgColor; }
+    public void setBgColor(BackgroundColor bgColor) { this.bgColor = colors.convertEnumBgColor(bgColor); }
 
     public String getDecoration() { return decoration; }
-    public void setDecoration(String decoration) { this.decoration = decoration; }
+    public void setDecoration(Decoration decoration) { this.decoration = colors.convertEnumDecoration(decoration); }
 
 }
