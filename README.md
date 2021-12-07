@@ -10,7 +10,9 @@
   - [Format Characters](#format-characters)
     - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
 - [Simple Formatter](#simple-formatter)
-- [Examples](docs/FORMAT-EXAMPLES.md)
+- [Colorizing the CLI Text](#colorizing-the-cli-text)
+- [Formatter Examples](docs/FORMAT-EXAMPLES.md)
+- [Colorizing Examples](docs/COLORIZE-EXAMPLES.md)
 - [License](#license)
 
 <hr>
@@ -82,6 +84,20 @@ String result = SimpleFormatter.stringf("{0} is {1} years old.", "John", 17);
 // John is 17 years old.
 ```
 See more examples [here](docs/FORMAT-EXAMPLES.md)
+
+<hr>
+
+## Colorizing the CLI Text
+```java
+// Method 1: Custom Colored Output
+CustomColorFormat ccf = new CustomColorFormat(CustomColorFormat.TColor.BLACK, CustomColorFormat.BgColor.BRIGHT_RED, CustomColorFormat.TDecoration.UNDERLINE);
+ccf.println("This is a black underline text with bright red background.");
+
+// Method 2: Simple Formatting
+System.out.println(BackgroundColor.red("This is a text with red background."));
+System.out.println(BackgroundColor.red(TextColor.yellow("This is a yellow text with red background.")));
+```
+See more examples [here](docs/COLORIZE-EXAMPLES.md)
 
 <hr>
 

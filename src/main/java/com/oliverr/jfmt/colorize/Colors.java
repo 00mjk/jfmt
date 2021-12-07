@@ -47,50 +47,50 @@ public class Colors {
     protected final String underline = "\u001b[4m";
     protected final String reversed = "\u001b[7m";
 
-    public String convertEnumTextColor(CustomColorFormat.TextColor color) {
-        if(color == CustomColorFormat.TextColor.BLACK) return textBlack;
-        if(color == CustomColorFormat.TextColor.RED) return textRed;
-        if(color == CustomColorFormat.TextColor.GREEN) return textGreen;
-        if(color == CustomColorFormat.TextColor.YELLOW) return textYellow;
-        if(color == CustomColorFormat.TextColor.BLUE) return textBlue;
-        if(color == CustomColorFormat.TextColor.MAGENTA) return textMagenta;
-        if(color == CustomColorFormat.TextColor.CYAN) return textCyan;
-        if(color == CustomColorFormat.TextColor.WHITE) return textWhite;
-        if(color == CustomColorFormat.TextColor.BRIGHT_BLACK) return textBrightBlack;
-        if(color == CustomColorFormat.TextColor.BRIGHT_RED) return textBrightRed;
-        if(color == CustomColorFormat.TextColor.BRIGHT_GREEN) return textBrightGreen;
-        if(color == CustomColorFormat.TextColor.BRIGHT_YELLOW) return textBrightYellow;
-        if(color == CustomColorFormat.TextColor.BRIGHT_BLUE) return textBrightBlue;
-        if(color == CustomColorFormat.TextColor.BRIGHT_MAGENTA) return textBrightMagenta;
-        if(color == CustomColorFormat.TextColor.BRIGHT_CYAN) return textBrightCyan;
-        if(color == CustomColorFormat.TextColor.BRIGHT_WHITE) return textBrightWhite;
+    public String convertEnumTextColor(CustomColorFormat.TColor color) {
+        if(color == CustomColorFormat.TColor.BLACK) return textBlack;
+        if(color == CustomColorFormat.TColor.RED) return textRed;
+        if(color == CustomColorFormat.TColor.GREEN) return textGreen;
+        if(color == CustomColorFormat.TColor.YELLOW) return textYellow;
+        if(color == CustomColorFormat.TColor.BLUE) return textBlue;
+        if(color == CustomColorFormat.TColor.MAGENTA) return textMagenta;
+        if(color == CustomColorFormat.TColor.CYAN) return textCyan;
+        if(color == CustomColorFormat.TColor.WHITE) return textWhite;
+        if(color == CustomColorFormat.TColor.BRIGHT_BLACK) return textBrightBlack;
+        if(color == CustomColorFormat.TColor.BRIGHT_RED) return textBrightRed;
+        if(color == CustomColorFormat.TColor.BRIGHT_GREEN) return textBrightGreen;
+        if(color == CustomColorFormat.TColor.BRIGHT_YELLOW) return textBrightYellow;
+        if(color == CustomColorFormat.TColor.BRIGHT_BLUE) return textBrightBlue;
+        if(color == CustomColorFormat.TColor.BRIGHT_MAGENTA) return textBrightMagenta;
+        if(color == CustomColorFormat.TColor.BRIGHT_CYAN) return textBrightCyan;
+        if(color == CustomColorFormat.TColor.BRIGHT_WHITE) return textBrightWhite;
         return "";
     }
     
-    public String convertEnumBgColor(CustomColorFormat.BackgroundColor color) {
-        if(color == CustomColorFormat.BackgroundColor.BLACK) return backgroundBlack;
-        if(color == CustomColorFormat.BackgroundColor.RED) return backgroundRed;
-        if(color == CustomColorFormat.BackgroundColor.GREEN) return backgroundGreen;
-        if(color == CustomColorFormat.BackgroundColor.YELLOW) return backgroundYellow;
-        if(color == CustomColorFormat.BackgroundColor.BLUE) return backgroundBlue;
-        if(color == CustomColorFormat.BackgroundColor.MAGENTA) return backgroundMagenta;
-        if(color == CustomColorFormat.BackgroundColor.CYAN) return backgroundCyan;
-        if(color == CustomColorFormat.BackgroundColor.WHITE) return backgroundWhite;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_BLACK) return backgroundBrightBlack;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_RED) return backgroundBrightRed;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_GREEN) return backgroundBrightGreen;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_YELLOW) return backgroundBrightYellow;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_BLUE) return backgroundBrightBlue;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_MAGENTA) return backgroundBrightMagenta;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_CYAN) return backgroundBrightCyan;
-        if(color == CustomColorFormat.BackgroundColor.BRIGHT_WHITE) return backgroundBrightWhite;
+    public String convertEnumBgColor(CustomColorFormat.BgColor color) {
+        if(color == CustomColorFormat.BgColor.BLACK) return backgroundBlack;
+        if(color == CustomColorFormat.BgColor.RED) return backgroundRed;
+        if(color == CustomColorFormat.BgColor.GREEN) return backgroundGreen;
+        if(color == CustomColorFormat.BgColor.YELLOW) return backgroundYellow;
+        if(color == CustomColorFormat.BgColor.BLUE) return backgroundBlue;
+        if(color == CustomColorFormat.BgColor.MAGENTA) return backgroundMagenta;
+        if(color == CustomColorFormat.BgColor.CYAN) return backgroundCyan;
+        if(color == CustomColorFormat.BgColor.WHITE) return backgroundWhite;
+        if(color == CustomColorFormat.BgColor.BRIGHT_BLACK) return backgroundBrightBlack;
+        if(color == CustomColorFormat.BgColor.BRIGHT_RED) return backgroundBrightRed;
+        if(color == CustomColorFormat.BgColor.BRIGHT_GREEN) return backgroundBrightGreen;
+        if(color == CustomColorFormat.BgColor.BRIGHT_YELLOW) return backgroundBrightYellow;
+        if(color == CustomColorFormat.BgColor.BRIGHT_BLUE) return backgroundBrightBlue;
+        if(color == CustomColorFormat.BgColor.BRIGHT_MAGENTA) return backgroundBrightMagenta;
+        if(color == CustomColorFormat.BgColor.BRIGHT_CYAN) return backgroundBrightCyan;
+        if(color == CustomColorFormat.BgColor.BRIGHT_WHITE) return backgroundBrightWhite;
         return "";
     }
 
-    public String convertEnumDecoration(CustomColorFormat.Decoration dec) {
-        if(dec == CustomColorFormat.Decoration.BOLD) return bold;
-        if(dec == CustomColorFormat.Decoration.REVERSED) return reversed;
-        if(dec == CustomColorFormat.Decoration.UNDERLINE) return underline;
+    public String convertEnumDecoration(CustomColorFormat.TDecoration dec) {
+        if(dec == CustomColorFormat.TDecoration.BOLD) return bold;
+        if(dec == CustomColorFormat.TDecoration.REVERSED) return reversed;
+        if(dec == CustomColorFormat.TDecoration.UNDERLINE) return underline;
         return "";
     }
 
