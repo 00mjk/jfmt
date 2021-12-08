@@ -7,6 +7,21 @@ public class Colorize {
 
     private static final Colors colors = new Colors();
 
+    public static String string(@NotNull String text, CustomColorFormat.TColor textColor) {
+        if(text == null) return "";
+        return colors.convertEnumTextColor(textColor)+text+colors.getReset();
+    }
+
+    public static String string(@NotNull String text, CustomColorFormat.TColor textColor, CustomColorFormat.BgColor bgColor) {
+        if(text == null) return "";
+        return colors.convertEnumTextColor(textColor)+colors.convertEnumBgColor(bgColor)+text+colors.getReset();
+    }
+
+    public static String string(@NotNull String text, CustomColorFormat.TColor textColor, CustomColorFormat.BgColor bgColor, CustomColorFormat.TDecoration dec) {
+        if(text == null) return "";
+        return colors.convertEnumTextColor(textColor)+colors.convertEnumBgColor(bgColor)+colors.convertEnumDecoration(dec)+text+colors.getReset();
+    }
+
     public static String colorf(@NotNull String text) {
         if(text == null) return "";
 

@@ -45,6 +45,19 @@ public class CustomColorFormat implements Serializable {
     public void print(@NotNull String text) { System.out.print(string(text)); }
     public void println(@NotNull String text) { System.out.println(string(text)); }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(super.equals(obj)) return true;
+        if(!(obj instanceof CustomColorFormat)) return false;
+        CustomColorFormat ccf = (CustomColorFormat)obj;
+        return this.getColor().equals(ccf.getColor()) && this.getBgColor().equals(ccf.getBgColor()) && this.getDecoration().equals(ccf.getDecoration());
+    }
+
+    @Override
+    public String toString() {
+        return colors.getReset()+getColor()+getBgColor()+getDecoration()+"Test text"+colors.getReset();
+    }
+
     public enum TColor {
         BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE,
         BRIGHT_BLACK, BRIGHT_RED, BRIGHT_GREEN, BRIGHT_YELLOW, BRIGHT_BLUE, BRIGHT_MAGENTA, BRIGHT_CYAN, BRIGHT_WHITE;

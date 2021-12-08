@@ -101,6 +101,11 @@ System.out.println(BackgroundColor.red(TextColor.yellow("This is a yellow text w
 System.out.println(Colorize.colorf("{t:yellow}This is a yellow text."));
 System.out.println(Colorize.colorf("{t:bgreen}This is a green text. {reset}This is a text in default format."));
 System.out.println(Colorize.colorf("{bg:bred}This is a text with bright red background."));
+
+// Method 4: Colorize.string() function
+System.out.println(Colorize.string("This is a red text.", CustomColorFormat.TColor.RED));
+System.out.println(Colorize.string("This is a red text with black background.", CustomColorFormat.TColor.RED, CustomColorFormat.BgColor.BLACK));
+System.out.println(Colorize.string("This is a red, underline text with black background.", CustomColorFormat.TColor.RED, CustomColorFormat.BgColor.BLACK, CustomColorFormat.TDecoration.UNDERLINE));
 ```
 See more examples [here](docs/COLORIZE-EXAMPLES.md)
 
