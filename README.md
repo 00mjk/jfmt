@@ -96,6 +96,11 @@ ccf.println("This is a black underline text with bright red background.");
 // Method 2: Simple Formatting
 System.out.println(BackgroundColor.red("This is a text with red background."));
 System.out.println(BackgroundColor.red(TextColor.yellow("This is a yellow text with red background.")));
+
+// Method 3: Colorize.colorf() function
+System.out.println(Colorize.colorf("{t:yellow}This is a yellow text."));
+System.out.println(Colorize.colorf("{t:bgreen}This is a green text. {reset}This is a text in default format."));
+System.out.println(Colorize.colorf("{bg:bred}This is a text with bright red background."));
 ```
 See more examples [here](docs/COLORIZE-EXAMPLES.md)
 

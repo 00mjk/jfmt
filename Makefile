@@ -1,5 +1,5 @@
 APP = jfmt
-VERSION = 1.1
+VERSION = 2.0
 
 # Dev
 clean:
