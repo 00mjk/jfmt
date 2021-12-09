@@ -1,5 +1,5 @@
 # JFMT - Java Formatter
-<img width="200px" src="./.github/images/logo.png" alt="Logo" title="Logo">
+<img width="100%" src="./.github/images/banner2.png" alt="Logo" title="Logo">
 <hr>
 
 ## Table of Contents
