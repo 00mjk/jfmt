@@ -2,8 +2,6 @@
 <img width="200px" src="./.github/images/logo.png" alt="Logo" title="Logo">
 <hr>
 
-🔬 This is a simple Java library that allows you to format strings more easily.<br>
-
 ## Table of Contents
 - [Formatter](#formatter)<br>
   - [Entities and symbols](#entities-and-symbols)
@@ -12,6 +10,7 @@
 - [Simple Formatter](#simple-formatter)
 - [Colorizing the CLI Text](#colorizing-the-cli-text)
 - [256 Color Support](#256-color-support)
+- [RGB Colors](#rgb-colors)
 - [Formatter Examples](docs/FORMAT-EXAMPLES.md)
 - [Colorizing Examples](docs/COLORIZE-EXAMPLES.md)
 - [License](#license)
@@ -132,12 +131,26 @@ t.println("Text");
 // Output: Text
 // With the background of code 1
 
+// Random color:
+t.random("This is a random colored text.");
+
 // Example:
 Color256 t = new Text256(0);
 for(int i = 0; i < 256; i++) {
     t.print(i+"   ");
     t.setCode(i);
 }
+```
+
+<hr>
+
+## RGB Colors
+```java
+/**
+* @param1: Red, @param2: Green, @param3: Blue
+*/
+RgbColor rgb = new RgbColor(255, 0, 0);
+rgb.println("Text");
 ```
 
 <hr>
