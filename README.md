@@ -11,6 +11,7 @@
     - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
 - [Simple Formatter](#simple-formatter)
 - [Colorizing the CLI Text](#colorizing-the-cli-text)
+- [256 Color Support](#256-color-support)
 - [Formatter Examples](docs/FORMAT-EXAMPLES.md)
 - [Colorizing Examples](docs/COLORIZE-EXAMPLES.md)
 - [License](#license)
@@ -108,6 +109,36 @@ System.out.println(Colorize.string("This is a red text with black background.", 
 System.out.println(Colorize.string("This is a red, underline text with black background.", CustomColorFormat.TColor.RED, CustomColorFormat.BgColor.BLACK, CustomColorFormat.TDecoration.UNDERLINE));
 ```
 See more examples [here](docs/COLORIZE-EXAMPLES.md)
+
+<hr>
+
+## 256 Color Support
+```java
+// In the constructor, you must provide a number between 0 and 255.
+Color256 t = new Text256(200);
+t.println("Text");
+// Output: Text
+// With the ANSI color code of 200
+
+// You can modify the code like this:
+t.setCode(201);
+t.println("Text2");
+// Output: Text2
+// With the ANSI color code of 201
+
+// You can use it as background as well:
+Color256 t = new Background256(1);
+t.println("Text");
+// Output: Text
+// With the background of code 1
+
+// Example:
+Color256 t = new Text256(0);
+for(int i = 0; i < 256; i++) {
+    t.print(i+"   ");
+    t.setCode(i);
+}
+```
 
 <hr>
 
