@@ -2,6 +2,8 @@ package com.oliverr.jfmt.colorize.rgb;
 
 import com.oliverr.jfmt.util.NotNull;
 
+import java.util.Random;
+
 public class Text256 extends Color256 {
 
     private final String reset = "\u001b[0m";
@@ -25,6 +27,14 @@ public class Text256 extends Color256 {
 
     @Override
     public String string(@NotNull String text) { return result+text+reset; }
+
+    @Override
+    public String random(@NotNull String text) {
+        Random r = new Random();
+        this.code = r.nextInt(255);
+        result = "\u001b[38;5;" + code + "m";
+        return string(text);
+    }
 
     public void setCode(int code) {
         this.code = code;
