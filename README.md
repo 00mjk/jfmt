@@ -3,10 +3,11 @@
 <hr>
 
 ## Table of Contents
-- [Formatter](#formatter)<br>
+- [Demo](#demo)<br>
+- [Formatter](#formatter)
   - [Entities and symbols](#entities-and-symbols)
   - [Format Characters](#format-characters)
-    - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
+  - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
 - [Simple Formatter](#simple-formatter)
 - [Colorizing the CLI Text](#colorizing-the-cli-text)
 - [256 Color Support](#256-color-support)
@@ -14,6 +15,17 @@
 - [Formatter Examples](docs/FORMAT-EXAMPLES.md)
 - [Colorizing Examples](docs/COLORIZE-EXAMPLES.md)
 - [License](#license)
+
+<hr>
+
+## Demo
+To run the Demo, make sure you have Java and Maven installed.<br>
+Then, open a terminal and type these commands:
+```sh
+git clone https://github.com/0l1v3rr/jfmt.git
+cd jfmt
+./demo.sh
+```
 
 <hr>
 
@@ -146,11 +158,7 @@ for(int i = 0; i < 256; i++) {
 
 ## RGB Colors
 ```java
-/**
-* @param1: Red
-* @param2: Green
-* @param3: Blue
-*/
+// new RgbColor(red, green, blue);
 RgbColor rgb = new RgbColor(255, 0, 0);
 rgb.println("Text");
 ```
