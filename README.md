@@ -147,7 +147,9 @@ for(int i = 0; i < 256; i++) {
 ## RGB Colors
 ```java
 /**
-* @param1: Red, @param2: Green, @param3: Blue
+* @param1: Red
+* @param2: Green
+* @param3: Blue
 */
 RgbColor rgb = new RgbColor(255, 0, 0);
 rgb.println("Text");
