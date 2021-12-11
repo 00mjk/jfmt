@@ -3,6 +3,7 @@
   - [Formatter](#formatter)
     - [Formatter.stringf](#formatterstringf)
     - [Formatter.printf, Formatter.printfln](#formatterprintf-formatterprintfln)
+    - [Formatter.align](#formatteralign)
   - [Simple Formatter](#simple-formatter)
     - [SimpleFormatter.stringf](#simpleformatterstringf)
     - [SimpleFormatter.printf](#simpleformatterprintf)
@@ -27,6 +28,16 @@ String result = Formatter.stringf("Hi %s! You are %d years old.", "Josh", 17);
 Formatter.printf("%v is a %v.", "John", "goat");
 // Output:
 // John is a goat.
+```
+
+### Formatter.align
+This method will left align the string, using a specified character as the fill character.
+```java
+String res1 = Formatter.align("test", 10)
+// res1: 'test      '
+
+String res2 = Formatter.align("test", 10, 'x')
+// res2: 'testxxxxxx'
 ```
 
 <hr>
