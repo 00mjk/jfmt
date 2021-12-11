@@ -42,23 +42,23 @@ public class Main {
 
     private static void colors256() {
         System.out.println(Colorize.colorf("{reset}"));
-        System.out.println(Colorize.colorf("{d:reversed}Text Colors:{reset}"));
+        System.out.println(Colorize.colorf("{d:bold}Text Colors:{reset}"));
 
         Color256 t = new Text256(1);
         System.out.print(Colorize.colorf("{reset}  "));
         for(int i = 1; i < 256; i++) {
-            if(i % 16 == 0) t.println("  "+i+"  ");
-            else t.print("  "+i+"  ");
+            if(i % 16 == 0) t.println(Formatter.align(" "+i+"", 5));
+            else t.print(Formatter.align(" "+i+"", 5));
             System.out.print(Colorize.colorf("{reset}  "));
             t.setCode(i);
         }
 
-        System.out.println(Colorize.colorf("\n\n{d:reversed}Background Colors:{reset}"));
+        System.out.println(Colorize.colorf("\n\n{d:bold}Background Colors:{reset}"));
         Color256 b = new Background256(1);
         System.out.print(Colorize.colorf("{reset}  "));
         for(int i = 1; i < 256; i++) {
-            if(i % 16 == 0) b.println("  "+i+"  ");
-            else b.print("  "+i+"  ");
+            if(i % 16 == 0) b.println(Formatter.align(" "+i+"", 5));
+            else b.print(Formatter.align(" "+i+"", 5));
             System.out.print(Colorize.colorf("{reset}  "));
             b.setCode(i);
         }
