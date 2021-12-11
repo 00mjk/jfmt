@@ -166,6 +166,25 @@ public class Formatter extends ReplaceEntities {
 
     public static void printfln(@NotNull String text, Object... args) { System.out.println(stringf(text, args)); }
 
+    /**
+     * This method will left align the string, using a space character as the fill character.
+     * @param text the text you want to fill
+     * @param length the length of the final string
+     */
+    public static String align(@NotNull String text, @NotNull int length) { return align(text, length, ' '); }
+
+
+    /**
+     * This method will left align the string, using a specified character as the fill character.
+     * @param text the text you want to fill
+     * @param length the length of the final string
+     * @param character the character you want to fill with
+     */
+    public static String align(@NotNull String text, @NotNull int length, char character) {
+        if(text.length() >= length) return text.substring(0, length);
+        return text + String.valueOf(character).repeat(length - text.length());
+    }
+
     private static String reverse(String s) {
         StringBuilder sb = new StringBuilder();
         for(int i = s.length() - 1; i >= 0; i--) sb.append(s.charAt(i));

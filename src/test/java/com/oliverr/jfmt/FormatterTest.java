@@ -106,5 +106,20 @@ public class FormatterTest {
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }
+    
+    @Test
+    public void alignTest() {
+        Assertions.assertEquals("test", Formatter.align("test", 4));
+        Assertions.assertEquals("tes", Formatter.align("test", 3));
+        Assertions.assertEquals("te", Formatter.align("test", 2));
+        Assertions.assertEquals("test ", Formatter.align("test", 5));
+        Assertions.assertEquals("test      ", Formatter.align("test", 10));
+
+        Assertions.assertEquals("test", Formatter.align("test", 4, 'x'));
+        Assertions.assertEquals("tes", Formatter.align("test", 3, 'x'));
+        Assertions.assertEquals("te", Formatter.align("test", 2, 'x'));
+        Assertions.assertEquals("testx", Formatter.align("test", 5, 'x'));
+        Assertions.assertEquals("testxxxxxx", Formatter.align("test", 10, 'x'));
+    }
 
 }
