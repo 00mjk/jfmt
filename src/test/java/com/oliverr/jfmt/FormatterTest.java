@@ -120,6 +120,18 @@ public class FormatterTest {
         Assertions.assertEquals("te", Formatter.align("test", 2, 'x'));
         Assertions.assertEquals("testx", Formatter.align("test", 5, 'x'));
         Assertions.assertEquals("testxxxxxx", Formatter.align("test", 10, 'x'));
+
+        Assertions.assertEquals("test", Formatter.align("test", 4, Formatter.Align.RIGHT));
+        Assertions.assertEquals("tes", Formatter.align("test", 3, Formatter.Align.RIGHT));
+        Assertions.assertEquals("te", Formatter.align("test", 2, Formatter.Align.RIGHT));
+        Assertions.assertEquals(" test", Formatter.align("test", 5, Formatter.Align.RIGHT));
+        Assertions.assertEquals("      test", Formatter.align("test", 10, Formatter.Align.RIGHT));
+
+        Assertions.assertEquals("test", Formatter.align("test", 4, 'x', Formatter.Align.RIGHT));
+        Assertions.assertEquals("tes", Formatter.align("test", 3, 'x', Formatter.Align.RIGHT));
+        Assertions.assertEquals("te", Formatter.align("test", 2, 'x', Formatter.Align.RIGHT));
+        Assertions.assertEquals("xtest", Formatter.align("test", 5, 'x', Formatter.Align.RIGHT));
+        Assertions.assertEquals("xxxxxxtest", Formatter.align("test", 10, 'x', Formatter.Align.RIGHT));
     }
 
 }

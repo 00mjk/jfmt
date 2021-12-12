@@ -180,10 +180,32 @@ public class Formatter extends ReplaceEntities {
      * @param length the length of the final string
      * @param character the character you want to fill with
      */
-    public static String align(@NotNull String text, @NotNull int length, char character) {
+    public static String align(@NotNull String text, @NotNull int length, char character) { return align(text, length, character, Align.LEFT); }
+
+    /**
+     * This method will align the string, using a specified character as the fill character.
+     * @param text the text you want to fill
+     * @param length the length of the final string
+     * @param align the alignment you want to use
+     */
+    public static String align(@NotNull String text, @NotNull int length, Align align) { return align(text, length, ' ', align); }
+
+    /**
+     * This method will align the string, using a specified character as the fill character.
+     * @param text the text you want to fill
+     * @param length the length of the final string
+     * @param character the character you want to fill with
+     * @param align the alignment you want to use
+     */
+    public static String align(@NotNull String text, @NotNull int length, char character, Align align) {
         if(text.length() >= length) return text.substring(0, length);
-        return text + String.valueOf(character).repeat(length - text.length());
+        String fill = String.valueOf(character).repeat(length - text.length());
+        if(align == Align.LEFT) return text + fill;
+        if(align == Align.RIGHT) return fill + text;
+        return text;
     }
+
+    public enum Align { LEFT, RIGHT }
 
     private static String reverse(String s) {
         StringBuilder sb = new StringBuilder();
