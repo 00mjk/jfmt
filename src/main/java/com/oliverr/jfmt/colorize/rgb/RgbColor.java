@@ -31,13 +31,30 @@ public class RgbColor implements Serializable {
 
     public String string(@NotNull String text) { return result+text+reset; }
 
-    public String random(@NotNull String text) {
+    public static String random(@NotNull String text) {
+        if(text == null) return "";
         Random r = new Random();
-        this.red = r.nextInt(255);
-        this.green = r.nextInt(255);
-        this.blue = r.nextInt(255);
-        result = "\u001b[38;2;"+red+";"+green+";"+blue+"m";
-        return string(text);
+        RgbColor rgbc = new RgbColor(255, 255, 255);
+        rgbc.red = r.nextInt(255);
+        rgbc.green = r.nextInt(255);
+        rgbc.blue = r.nextInt(255);
+        rgbc.result = "\u001b[38;2;"+rgbc.red+";"+rgbc.green+";"+rgbc.blue+"m";
+        return rgbc.string(text);
+    }
+
+    public static String rainbow(@NotNull String text) {
+        if(text == null) return "";
+        StringBuilder sb = new StringBuilder();
+        RgbColor rgbc = new RgbColor(255, 255, 255);
+        Random r = new Random();
+        for(int i = 0; i < text.length(); i++) {
+            rgbc.red = r.nextInt(255);
+            rgbc.green = r.nextInt(255);
+            rgbc.blue = r.nextInt(255);
+            sb.append("\u001b[38;2;").append(rgbc.red).append(";").append(rgbc.green).append(";").append(rgbc.blue).append("m").append(text.charAt(i));
+        }
+
+        return sb.toString();
     }
 
 }
