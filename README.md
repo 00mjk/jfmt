@@ -19,8 +19,10 @@
 <hr>
 
 ## Demo
+<img width="100%" src="./.github/images/demo1.png" alt="Demo" title="Demo">
 To run the Demo, make sure you have Java and Maven installed.<br>
 Then, open a terminal and type these commands:
+
 ```sh
 git clone https://github.com/0l1v3rr/jfmt.git
 cd jfmt
