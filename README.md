@@ -163,6 +163,9 @@ for(int i = 0; i < 256; i++) {
 // new RgbColor(red, green, blue);
 RgbColor rgb = new RgbColor(255, 0, 0);
 rgb.println("Text");
+
+// Rainbow rgb text:
+RgbColor.rainbow("Text");
 ```
 
 <hr>
