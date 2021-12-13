@@ -5,8 +5,8 @@
 ## Table of Contents
 - [Demo](#demo)<br>
 - [Formatter](#formatter)
-  - [Entities and symbols](#entities-and-symbols)
-  - [Format Characters](#format-characters)
+  - Entities and symbols
+  - Format Characters
   - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
 - [Simple Formatter](#simple-formatter)
 - [Colorizing the CLI Text](#colorizing-the-cli-text)
@@ -26,7 +26,7 @@ Then, open a terminal and type these commands:
 ```sh
 git clone https://github.com/0l1v3rr/jfmt.git
 cd jfmt
-./demo.sh
+bash demo.sh
 ```
 
 <hr>
@@ -34,35 +34,44 @@ cd jfmt
 ## Formatter
 The `Formatter.stringf()` method is a function, which provides you the ability to format strings more easily.<br>
 It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols), and [Format Characters](#format-characters).
-### Entities and symbols
-`&n`: Line break<br>
-`&N`: Double line break<br>
-`&t`: Current time in a default format<br>
-`&d`: Current date in a default format<br>
-<br>
-`$c`: Copyright (©)<br>
-`$r`: Registered trademark (®)<br>
-`$e`: Element of (∈)<br>
-`$p`: N-ary product (∏)<br>
-`$s`: N-ary summation (∑)<br>
-`$tm`: Trademark (™)<br>
-`$Ua`: Upwards Arrow (↑)<br>
-`$Da`: Downwards Arrow (↓)<br>
-`$La`: Leftwards Arrow (←)<br>
-`$Ra`: Rightwards Arrow (→)<br>
 
-### Format Characters
-`%v`: Value in the default (`.toString()`) format<br>
-`%s`: String in a default format<br>
-`%S`: String in uppercase<br>
-`%b`: Boolean (**true**/**false**)<br>
-`%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
-`%o`: Number in binary<br>
-`%f`: A float or a double number<br>
-`%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
-`%r`: String in a reversed format<br>
-`%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"<br>
-`%a`: List, ArrayList, Set, HashSet in a format like this: [ "element1" "element2" ]
+<details>
+  <summary>Entities and symbols</summary>
+
+  `&n`: Line break<br>
+  `&N`: Double line break<br>
+  `&t`: Current time in a default format<br>
+  `&d`: Current date in a default format<br>
+  <br>
+  `$c`: Copyright (©)<br>
+  `$r`: Registered trademark (®)<br>
+  `$e`: Element of (∈)<br>
+  `$p`: N-ary product (∏)<br>
+  `$s`: N-ary summation (∑)<br>
+  `$tm`: Trademark (™)<br>
+  `$Ua`: Upwards Arrow (↑)<br>
+  `$Da`: Downwards Arrow (↓)<br>
+  `$La`: Leftwards Arrow (←)<br>
+  `$Ra`: Rightwards Arrow (→)<br>
+</details>
+
+<details>
+  <summary>Format Characters</summary>
+
+  `%v`: Value in the default (`.toString()`) format<br>
+  `%s`: String in a default format<br>
+  `%S`: String in uppercase<br>
+  `%b`: Boolean (**true**/**false**)<br>
+  `%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
+  `%o`: Number in binary<br>
+  `%f`: A float or a double number<br>
+  `%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
+  `%r`: String in a reversed format<br>
+  `%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"<br>
+  `%a`: List, ArrayList, Set, HashSet in a format like this: [ "element1" "element2" ]
+</details>
+
+<br>
 
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
 **For example:**
