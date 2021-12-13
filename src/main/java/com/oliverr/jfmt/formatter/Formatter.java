@@ -18,6 +18,10 @@ public class Formatter extends ReplaceEntities {
     public static String getDateFormat() { return format; }
     public static void setDateFormat(String format) { Formatter.format = format; }
 
+    private static char decimalSeperator = '.';
+    public static char getDecimalSeperator() { return decimalSeperator; }
+    public static void setDecimalSeperator(char decimalSeperator) { Formatter.decimalSeperator = decimalSeperator; }
+
     private static final SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
     private static final SimpleDateFormat sdf2 = new SimpleDateFormat(getTimeFormat());
 
@@ -116,9 +120,7 @@ public class Formatter extends ReplaceEntities {
                             if(num == 0) {
                                 res = Replace.first(res, "%f"+num, Math.round(Double.parseDouble(args[i].toString()))+"");
                             } else {
-                                String sb = "0." + "0".repeat(Math.max(0, num));
-                                DecimalFormat df = new DecimalFormat(sb);
-                                res = Replace.first(res, "%f"+num, Replace.all(df.format(Double.parseDouble(args[i].toString())), ",", "."));
+                                res = Replace.first(res, "%f"+num, formatDecimal(Double.parseDouble(args[i].toString()), num));
                             }
                         }
                     }
@@ -167,7 +169,7 @@ public class Formatter extends ReplaceEntities {
     public static void printfln(@NotNull String text, Object... args) { System.out.println(stringf(text, args)); }
 
     /**
-     * This method will left align the string, using a space character as the fill character.
+     * This method will align the string, using a space character as the fill character.
      * @param text the text you want to fill
      * @param length the length of the final string
      */
@@ -175,7 +177,7 @@ public class Formatter extends ReplaceEntities {
 
 
     /**
-     * This method will left align the string, using a specified character as the fill character.
+     * This method will align the string, using a specified character as the fill character.
      * @param text the text you want to fill
      * @param length the length of the final string
      * @param character the character you want to fill with
@@ -206,6 +208,12 @@ public class Formatter extends ReplaceEntities {
     }
 
     public enum Align { LEFT, RIGHT }
+
+    private static String formatDecimal(Double number, int num) {
+        String sb = "0." + "0".repeat(Math.max(0, num));
+        DecimalFormat df = new DecimalFormat(sb);
+        return Replace.all(df.format(Double.parseDouble(number.toString())), ".", decimalSeperator+"");
+    }
 
     private static String reverse(String s) {
         StringBuilder sb = new StringBuilder();

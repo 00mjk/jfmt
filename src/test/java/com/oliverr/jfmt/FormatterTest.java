@@ -31,6 +31,8 @@ public class FormatterTest {
         set.add(12.43);
         hashSet.add(true);
         hashSet.add(false);
+
+        Formatter.setDecimalSeperator('.');
     }
 
     @Test
