@@ -5,8 +5,8 @@
 ## Table of Contents
 - [Demo](#demo)<br>
 - [Formatter](#formatter)
-  - Entities and symbols
-  - Format Characters
+  - [Entities and symbols](#entities-and-symbols)
+  - [Format Characters](#format-characters)
   - [Modifying the default date and time format](#you-can-modify-the-default-date-and-time-format)
 - [Simple Formatter](#simple-formatter)
 - [Colorizing the CLI Text](#colorizing-the-cli-text)
@@ -14,6 +14,7 @@
 - [RGB Colors](#rgb-colors)
 - [Formatter Examples](docs/FORMAT-EXAMPLES.md)
 - [Colorizing Examples](docs/COLORIZE-EXAMPLES.md)
+- [Contributing](#contributing)
 - [License](#license)
 
 <hr>
@@ -35,8 +36,9 @@ bash demo.sh
 The `Formatter.stringf()` method is a function, which provides you the ability to format strings more easily.<br>
 It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols), and [Format Characters](#format-characters).
 
+### Entities and symbols
 <details>
-  <summary>Entities and symbols</summary>
+  <summary>Click here to expand</summary>
 
   `&n`: Line break<br>
   `&N`: Double line break<br>
@@ -55,8 +57,9 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `$Ra`: Rightwards Arrow (→)<br>
 </details>
 
+### Format Characters
 <details>
-  <summary>Format Characters</summary>
+  <summary>Click here to expand</summary>
 
   `%v`: Value in the default (`.toString()`) format<br>
   `%s`: String in a default format<br>
@@ -68,7 +71,6 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
   `%r`: String in a reversed format<br>
   `%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"<br>
-  `%a`: List, ArrayList, Set, HashSet in a format like this: [ "element1" "element2" ]
 </details>
 
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
@@ -176,6 +178,14 @@ RgbColor.rainbow("Text");
 ```
 
 <hr>
+
+## Contributing
+If you want to contribute to this project:
+1. [Star](https://github.com/0l1v3rr/jfmt/stargazers) this repository
+2. Open an [Issue](https://github.com/0l1v3rr/jfmt/issues). There are some Issue Templates available.
+3. Open a [Pull Request](https://github.com/0l1v3rr/jfmt/pulls), where describe what you did and why.<br>
+
+Thanks for contributing! (:
 
 ## License
 This library is licensed under the terms of the [MIT License](LICENSE)
