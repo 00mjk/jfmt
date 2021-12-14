@@ -71,8 +71,6 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `%a`: List, ArrayList, Set, HashSet in a format like this: [ "element1" "element2" ]
 </details>
 
-<br>
-
 Note: Assign the appropriate type of variable to the characters, otherwise, it will not be formatted.<br>
 **For example:**
 ```java
