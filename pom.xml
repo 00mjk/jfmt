@@ -6,7 +6,7 @@
 
     <groupId>com.oliverr.jfmt</groupId>
     <artifactId>jfmt</artifactId>
-    <version>2.1</version>
+    <version>2.2.1</version>
 
     <name>Java Formatter</name>
     <description>A simple Java library that allows you to format strings more easily and write colored CLI outputs.</description>
