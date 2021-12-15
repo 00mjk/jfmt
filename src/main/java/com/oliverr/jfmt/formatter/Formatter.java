@@ -51,7 +51,7 @@ public class Formatter extends ReplaceEntities {
                 }
                 else if(text.charAt(i + 1) == 'r') fmtChars.add("%r");
                 else if(text.charAt(i + 1) == 't') fmtChars.add("%t");
-                else if(text.charAt(i + 1) == 'a') fmtChars.add("%a");
+                else if(text.charAt(i + 1) == 'i') fmtChars.add("%i");
             }
         }
 
@@ -136,6 +136,13 @@ public class Formatter extends ReplaceEntities {
                     if(args[i] instanceof Date) {
                         res = Replace.first(res, "%t", sdf.format((Date)args[i]));
                     }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%i")) {
+                    if(isBinary(args[i].toString())) {
+                        res = Replace.first(res, "%i", Integer.parseInt(args[i].toString(), 2)+"");
+                    }
                     //continue;
                 }
             }
@@ -199,6 +206,11 @@ public class Formatter extends ReplaceEntities {
         StringBuilder sb = new StringBuilder();
         for(int i = s.length() - 1; i >= 0; i--) sb.append(s.charAt(i));
         return sb.toString();
+    }
+
+    private static boolean isBinary(String n) {
+        for(int i = 0; i < n.length(); i++) if(n.charAt(i) != '0' && n.charAt(i) != '1') return false;
+        return true;
     }
 
 }
