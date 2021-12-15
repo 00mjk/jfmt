@@ -66,7 +66,8 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `%S`: String in uppercase<br>
   `%b`: Boolean (**true**/**false**)<br>
   `%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
-  `%o`: Number in binary<br>
+  `%o`: Number in binary - You must provide it in decimal<br>
+  `%i`: Number in decimal - You must provide it in binary<br>
   `%f`: A float or a double number<br>
   `%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
   `%r`: String in a reversed format<br>
