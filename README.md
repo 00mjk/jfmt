@@ -65,6 +65,7 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `%s`: String in a default format<br>
   `%S`: String in uppercase<br>
   `%b`: Boolean (**true**/**false**)<br>
+  `%B`: Boolean in uppercase<br>
   `%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
   `%o`: Number in binary - You must provide it in decimal<br>
   `%i`: Number in decimal - You must provide it in binary<br>

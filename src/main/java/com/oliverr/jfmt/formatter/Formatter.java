@@ -40,6 +40,7 @@ public class Formatter extends ReplaceEntities {
                 else if(text.charAt(i + 1) == 's') fmtChars.add("%s");
                 else if(text.charAt(i + 1) == 'S') fmtChars.add("%S");
                 else if(text.charAt(i + 1) == 'b') fmtChars.add("%b");
+                else if(text.charAt(i + 1) == 'B') fmtChars.add("%B");
                 else if(text.charAt(i + 1) == 'd') fmtChars.add("%d");
                 else if(text.charAt(i + 1) == 'o') fmtChars.add("%o");
                 else if(text.charAt(i + 1) == 'f') {
@@ -84,6 +85,14 @@ public class Formatter extends ReplaceEntities {
                     if(args[i] instanceof Boolean) {
                         if(((Boolean) args[i])) res = Replace.first(res, "%b", "true");
                         else res = Replace.first(res, "%b", "false");
+                    }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%B")) {
+                    if(args[i] instanceof Boolean) {
+                        if(((Boolean) args[i])) res = Replace.first(res, "%B", "TRUE");
+                        else res = Replace.first(res, "%B", "FALSE");
                     }
                     continue;
                 }

@@ -45,6 +45,8 @@ public class FormatterTest {
         Assertions.assertEquals("True: true", Formatter.stringf("True: %v", true));
         Assertions.assertEquals("True: true", Formatter.stringf("True: %b", true));
         Assertions.assertEquals("False: false", Formatter.stringf("False: %b", false));
+        Assertions.assertEquals("True: TRUE", Formatter.stringf("True: %B", 1 == 1));
+        Assertions.assertEquals("False: FALSE", Formatter.stringf("False: %B", 1 != 1));
         Assertions.assertEquals("This is not a boolean: %b", Formatter.stringf("This is not a boolean: %b", "asd"));
         Assertions.assertEquals("This is a string.", Formatter.stringf("%s is a string.", "This"));
         Assertions.assertEquals("%s is not a string.", Formatter.stringf("%s is not a string.", 33));
