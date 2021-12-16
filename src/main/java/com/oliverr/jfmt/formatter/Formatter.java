@@ -25,6 +25,11 @@ public class Formatter extends ReplaceEntities {
     private static final SimpleDateFormat sdf = new SimpleDateFormat(getDateFormat());
     private static final SimpleDateFormat sdf2 = new SimpleDateFormat(getTimeFormat());
 
+    /**
+     * This function provides you the ability to format strings more easily.
+     * @param text the text you want to format
+     * @param args the arguments
+     */
     public static String stringf(@NotNull String text, Object... args) {
         if(args == null) return text;
 
@@ -51,8 +56,10 @@ public class Formatter extends ReplaceEntities {
                     }
                 }
                 else if(text.charAt(i + 1) == 'r') fmtChars.add("%r");
+                else if(text.charAt(i + 1) == 'R') fmtChars.add("%R");
                 else if(text.charAt(i + 1) == 't') fmtChars.add("%t");
                 else if(text.charAt(i + 1) == 'i') fmtChars.add("%i");
+                else if(text.charAt(i + 1) == 'q') fmtChars.add("%q");
             }
         }
 
@@ -141,6 +148,11 @@ public class Formatter extends ReplaceEntities {
                     continue;
                 }
 
+                if(fmtChars.get(i).equals("%R")) {
+                    res = Replace.first(res, "%R", reverse(args[i].toString()).toUpperCase());
+                    continue;
+                }
+
                 if(fmtChars.get(i).equals("%t")) {
                     if(args[i] instanceof Date) {
                         res = Replace.first(res, "%t", sdf.format((Date)args[i]));
@@ -152,6 +164,11 @@ public class Formatter extends ReplaceEntities {
                     if(isBinary(args[i].toString())) {
                         res = Replace.first(res, "%i", Integer.parseInt(args[i].toString(), 2)+"");
                     }
+                    continue;
+                }
+
+                if(fmtChars.get(i).equals("%q")) {
+                    res = Replace.first(res, "%q", "\""+args[i].toString()+"\"");
                     //continue;
                 }
             }
@@ -160,8 +177,18 @@ public class Formatter extends ReplaceEntities {
         return res;
     }
 
+    /**
+     * This method provides you the ability to print formatted strings more easily.
+     * @param text the text you want to format
+     * @param args the arguments
+     */
     public static void printf(@NotNull String text, Object... args) { System.out.print(stringf(text, args)); }
 
+    /**
+     * This method provides you the ability to print formatted strings more easily.
+     * @param text the text you want to format
+     * @param args the arguments
+     */
     public static void printfln(@NotNull String text, Object... args) { System.out.println(stringf(text, args)); }
 
     /**

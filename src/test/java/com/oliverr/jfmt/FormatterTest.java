@@ -82,6 +82,7 @@ public class FormatterTest {
 
         Assertions.assertEquals("indulagorogaludni", Formatter.stringf("%r", "indulagorogaludni"));
         Assertions.assertEquals("asdasd", Formatter.stringf("%r", "dsadsa"));
+        Assertions.assertEquals("ASDASD", Formatter.stringf("%R", "dsadsa"));
         Assertions.assertEquals("Reversed: nhoJ", Formatter.stringf("Reversed: %r", "John"));
         Assertions.assertEquals("Reversed num: 32", Formatter.stringf("Reversed num: %r", 23));
         Assertions.assertEquals("eurt", Formatter.stringf("%r", true));
@@ -104,6 +105,9 @@ public class FormatterTest {
         Assertions.assertEquals("13.12 13.134", Formatter.stringf("%f2 %f3", 13.12113211, 13.1341211));
         Assertions.assertEquals("22", Formatter.stringf("%f0", 22.1221321331));
         Assertions.assertEquals("22.1111111112", Formatter.stringf("%f92", 22.11111111111111));
+
+        Assertions.assertEquals("\"test\"", Formatter.stringf("%q", "test"));
+        Assertions.assertEquals("text: \"a\"", Formatter.stringf("text: %q", "a"));
 
         //Assertions.assertEquals("", Formatter.stringf("", ""));
     }

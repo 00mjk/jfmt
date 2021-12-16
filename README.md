@@ -64,6 +64,7 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `%v`: Value in the default (`.toString()`) format<br>
   `%s`: String in a default format<br>
   `%S`: String in uppercase<br>
+  `%q`: String in a double quote format. ("text")<br>
   `%b`: Boolean (**true**/**false**)<br>
   `%B`: Boolean in uppercase<br>
   `%d`: A round number (if you provide a float or a double, it'll split off everything after the '.')<br>
@@ -72,6 +73,7 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `%f`: A float or a double number<br>
   `%f<n>:` A float or a double number rounded to **n** decimal places. (E.g.: `%f3`)<br>
   `%r`: String in a reversed format<br>
+  `%R`: String in a reversed & uppercase format<br>
   `%t`: **java.util.Date** format - default is "_yyyy-MM-dd_"<br>
 </details>
 
