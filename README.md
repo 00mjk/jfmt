@@ -173,12 +173,18 @@ for(int i = 0; i < 256; i++) {
 
 ## RGB Colors
 ```java
-// new RgbColor(red, green, blue);
-RgbColor rgb = new RgbColor(255, 0, 0);
+// RGB text
+RgbColor rgb = new RgbText(255, 0, 0);
 rgb.println("Text");
 
-// Rainbow rgb text:
-RgbColor.rainbow("Text");
+// Rainbow text:
+RgbText.rainbow("Text");
+// Random RGB text:
+RgbText.random("Text");
+
+// RGB background
+RgbColor rgb = new RgbBackground(255, 0, 0);
+rgb.println("Text");
 ```
 
 <hr>
