@@ -1,10 +1,10 @@
 package com.oliverr.jfmt;
 
 import com.oliverr.jfmt.colorize.Colorize;
-import com.oliverr.jfmt.colorize.rgb.Background256;
-import com.oliverr.jfmt.colorize.rgb.Color256;
-import com.oliverr.jfmt.colorize.rgb.RgbColor;
-import com.oliverr.jfmt.colorize.rgb.Text256;
+import com.oliverr.jfmt.colorize.eightbit.Background256;
+import com.oliverr.jfmt.colorize.eightbit.Color256;
+import com.oliverr.jfmt.colorize.eightbit.Text256;
+import com.oliverr.jfmt.colorize.rgb.*;
 import com.oliverr.jfmt.formatter.Formatter;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         if(args.length == 0) {
-            System.out.println(RgbColor.rainbow("\t--==<[{ Java Formatter }]>==--"));
+            System.out.println(RgbText.rainbow("\t--==<[{ Java Formatter }]>==--"));
             System.out.println(Colorize.colorf(Formatter.stringf("{t:bgreen}GitHub:  {reset}%v", github)));
             System.out.println(Colorize.colorf(Formatter.stringf("{t:bcyan}Version: {reset}%v", version)));
             System.out.println(Colorize.colorf("{bg:black}{t:white}Read README.md for more information."));

@@ -1,4 +1,4 @@
-package com.oliverr.jfmt.colorize.rgb;
+package com.oliverr.jfmt.colorize.eightbit;
 
 import com.oliverr.jfmt.util.NotNull;
 
