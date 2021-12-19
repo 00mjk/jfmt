@@ -230,8 +230,6 @@ public class Formatter extends ReplaceEntities {
         return text;
     }
 
-    public enum Align { LEFT, RIGHT }
-
     private static String formatDecimal(Double number, int num) {
         String sb = "0." + "0".repeat(Math.max(0, num));
         DecimalFormat df = new DecimalFormat(sb);

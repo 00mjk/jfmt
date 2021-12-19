@@ -1,5 +1,6 @@
 package com.oliverr.jfmt;
 
+import com.oliverr.jfmt.formatter.Align;
 import com.oliverr.jfmt.formatter.Formatter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -126,17 +127,17 @@ public class FormatterTest {
         Assertions.assertEquals("testx", Formatter.align("test", 5, 'x'));
         Assertions.assertEquals("testxxxxxx", Formatter.align("test", 10, 'x'));
 
-        Assertions.assertEquals("test", Formatter.align("test", 4, Formatter.Align.RIGHT));
-        Assertions.assertEquals("tes", Formatter.align("test", 3, Formatter.Align.RIGHT));
-        Assertions.assertEquals("te", Formatter.align("test", 2, Formatter.Align.RIGHT));
-        Assertions.assertEquals(" test", Formatter.align("test", 5, Formatter.Align.RIGHT));
-        Assertions.assertEquals("      test", Formatter.align("test", 10, Formatter.Align.RIGHT));
+        Assertions.assertEquals("test", Formatter.align("test", 4, Align.RIGHT));
+        Assertions.assertEquals("tes", Formatter.align("test", 3, Align.RIGHT));
+        Assertions.assertEquals("te", Formatter.align("test", 2, Align.RIGHT));
+        Assertions.assertEquals(" test", Formatter.align("test", 5, Align.RIGHT));
+        Assertions.assertEquals("      test", Formatter.align("test", 10, Align.RIGHT));
 
-        Assertions.assertEquals("test", Formatter.align("test", 4, 'x', Formatter.Align.RIGHT));
-        Assertions.assertEquals("tes", Formatter.align("test", 3, 'x', Formatter.Align.RIGHT));
-        Assertions.assertEquals("te", Formatter.align("test", 2, 'x', Formatter.Align.RIGHT));
-        Assertions.assertEquals("xtest", Formatter.align("test", 5, 'x', Formatter.Align.RIGHT));
-        Assertions.assertEquals("xxxxxxtest", Formatter.align("test", 10, 'x', Formatter.Align.RIGHT));
+        Assertions.assertEquals("test", Formatter.align("test", 4, 'x', Align.RIGHT));
+        Assertions.assertEquals("tes", Formatter.align("test", 3, 'x', Align.RIGHT));
+        Assertions.assertEquals("te", Formatter.align("test", 2, 'x', Align.RIGHT));
+        Assertions.assertEquals("xtest", Formatter.align("test", 5, 'x', Align.RIGHT));
+        Assertions.assertEquals("xxxxxxtest", Formatter.align("test", 10, 'x', Align.RIGHT));
     }
 
 }
