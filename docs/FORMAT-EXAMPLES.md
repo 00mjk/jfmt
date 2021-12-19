@@ -39,7 +39,7 @@ String res1 = Formatter.align("test", 10)
 String res2 = Formatter.align("test", 10, 'x')
 // res2: 'testxxxxxx'
 
-String res3 = Formatter.align("test", 10, Formatter.Align.RIGHT);
+String res3 = Formatter.align("test", 10, Align.RIGHT);
 // res3: '      test'
 ```
 
