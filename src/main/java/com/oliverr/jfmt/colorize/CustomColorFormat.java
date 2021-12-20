@@ -58,16 +58,6 @@ public class CustomColorFormat implements Serializable {
         return colors.getReset()+getColor()+getBgColor()+getDecoration()+"Test text"+colors.getReset();
     }
 
-    public enum TColor {
-        BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE,
-        BRIGHT_BLACK, BRIGHT_RED, BRIGHT_GREEN, BRIGHT_YELLOW, BRIGHT_BLUE, BRIGHT_MAGENTA, BRIGHT_CYAN, BRIGHT_WHITE;
-    }
-
-    public enum BgColor {
-        BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE,
-        BRIGHT_BLACK, BRIGHT_RED, BRIGHT_GREEN, BRIGHT_YELLOW, BRIGHT_BLUE, BRIGHT_MAGENTA, BRIGHT_CYAN, BRIGHT_WHITE;
-    }
-
     public enum TDecoration {
         BOLD, UNDERLINE, REVERSED
     }

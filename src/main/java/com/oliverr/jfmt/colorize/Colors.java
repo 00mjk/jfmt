@@ -47,43 +47,43 @@ public class Colors {
     protected final String underline = "\u001b[4m";
     protected final String reversed = "\u001b[7m";
 
-    public String convertEnumTextColor(CustomColorFormat.TColor color) {
-        if(color == CustomColorFormat.TColor.BLACK) return textBlack;
-        if(color == CustomColorFormat.TColor.RED) return textRed;
-        if(color == CustomColorFormat.TColor.GREEN) return textGreen;
-        if(color == CustomColorFormat.TColor.YELLOW) return textYellow;
-        if(color == CustomColorFormat.TColor.BLUE) return textBlue;
-        if(color == CustomColorFormat.TColor.MAGENTA) return textMagenta;
-        if(color == CustomColorFormat.TColor.CYAN) return textCyan;
-        if(color == CustomColorFormat.TColor.WHITE) return textWhite;
-        if(color == CustomColorFormat.TColor.BRIGHT_BLACK) return textBrightBlack;
-        if(color == CustomColorFormat.TColor.BRIGHT_RED) return textBrightRed;
-        if(color == CustomColorFormat.TColor.BRIGHT_GREEN) return textBrightGreen;
-        if(color == CustomColorFormat.TColor.BRIGHT_YELLOW) return textBrightYellow;
-        if(color == CustomColorFormat.TColor.BRIGHT_BLUE) return textBrightBlue;
-        if(color == CustomColorFormat.TColor.BRIGHT_MAGENTA) return textBrightMagenta;
-        if(color == CustomColorFormat.TColor.BRIGHT_CYAN) return textBrightCyan;
-        if(color == CustomColorFormat.TColor.BRIGHT_WHITE) return textBrightWhite;
+    public String convertEnumTextColor(TColor color) {
+        if(color == TColor.BLACK) return textBlack;
+        if(color == TColor.RED) return textRed;
+        if(color == TColor.GREEN) return textGreen;
+        if(color == TColor.YELLOW) return textYellow;
+        if(color == TColor.BLUE) return textBlue;
+        if(color == TColor.MAGENTA) return textMagenta;
+        if(color == TColor.CYAN) return textCyan;
+        if(color == TColor.WHITE) return textWhite;
+        if(color == TColor.BRIGHT_BLACK) return textBrightBlack;
+        if(color == TColor.BRIGHT_RED) return textBrightRed;
+        if(color == TColor.BRIGHT_GREEN) return textBrightGreen;
+        if(color == TColor.BRIGHT_YELLOW) return textBrightYellow;
+        if(color == TColor.BRIGHT_BLUE) return textBrightBlue;
+        if(color == TColor.BRIGHT_MAGENTA) return textBrightMagenta;
+        if(color == TColor.BRIGHT_CYAN) return textBrightCyan;
+        if(color == TColor.BRIGHT_WHITE) return textBrightWhite;
         return "";
     }
     
-    public String convertEnumBgColor(CustomColorFormat.BgColor color) {
-        if(color == CustomColorFormat.BgColor.BLACK) return backgroundBlack;
-        if(color == CustomColorFormat.BgColor.RED) return backgroundRed;
-        if(color == CustomColorFormat.BgColor.GREEN) return backgroundGreen;
-        if(color == CustomColorFormat.BgColor.YELLOW) return backgroundYellow;
-        if(color == CustomColorFormat.BgColor.BLUE) return backgroundBlue;
-        if(color == CustomColorFormat.BgColor.MAGENTA) return backgroundMagenta;
-        if(color == CustomColorFormat.BgColor.CYAN) return backgroundCyan;
-        if(color == CustomColorFormat.BgColor.WHITE) return backgroundWhite;
-        if(color == CustomColorFormat.BgColor.BRIGHT_BLACK) return backgroundBrightBlack;
-        if(color == CustomColorFormat.BgColor.BRIGHT_RED) return backgroundBrightRed;
-        if(color == CustomColorFormat.BgColor.BRIGHT_GREEN) return backgroundBrightGreen;
-        if(color == CustomColorFormat.BgColor.BRIGHT_YELLOW) return backgroundBrightYellow;
-        if(color == CustomColorFormat.BgColor.BRIGHT_BLUE) return backgroundBrightBlue;
-        if(color == CustomColorFormat.BgColor.BRIGHT_MAGENTA) return backgroundBrightMagenta;
-        if(color == CustomColorFormat.BgColor.BRIGHT_CYAN) return backgroundBrightCyan;
-        if(color == CustomColorFormat.BgColor.BRIGHT_WHITE) return backgroundBrightWhite;
+    public String convertEnumBgColor(BgColor color) {
+        if(color == BgColor.BLACK) return backgroundBlack;
+        if(color == BgColor.RED) return backgroundRed;
+        if(color == BgColor.GREEN) return backgroundGreen;
+        if(color == BgColor.YELLOW) return backgroundYellow;
+        if(color == BgColor.BLUE) return backgroundBlue;
+        if(color == BgColor.MAGENTA) return backgroundMagenta;
+        if(color == BgColor.CYAN) return backgroundCyan;
+        if(color == BgColor.WHITE) return backgroundWhite;
+        if(color == BgColor.BRIGHT_BLACK) return backgroundBrightBlack;
+        if(color == BgColor.BRIGHT_RED) return backgroundBrightRed;
+        if(color == BgColor.BRIGHT_GREEN) return backgroundBrightGreen;
+        if(color == BgColor.BRIGHT_YELLOW) return backgroundBrightYellow;
+        if(color == BgColor.BRIGHT_BLUE) return backgroundBrightBlue;
+        if(color == BgColor.BRIGHT_MAGENTA) return backgroundBrightMagenta;
+        if(color == BgColor.BRIGHT_CYAN) return backgroundBrightCyan;
+        if(color == BgColor.BRIGHT_WHITE) return backgroundBrightWhite;
         return "";
     }
 
