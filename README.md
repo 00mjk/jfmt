@@ -117,7 +117,7 @@ See more examples [here](docs/FORMAT-EXAMPLES.md)
 ## Colorizing the CLI Text
 ```java
 // Method 1: Custom Colored Output
-CustomColorFormat ccf = new CustomColorFormat(CustomColorFormat.TColor.BLACK, CustomColorFormat.BgColor.BRIGHT_RED, CustomColorFormat.TDecoration.UNDERLINE);
+CustomColorFormat ccf = new CustomColorFormat(TColor.BLACK, BgColor.BRIGHT_RED, TDecoration.UNDERLINE);
 ccf.println("This is a black underline text with bright red background.");
 
 // Method 2: Simple Formatting
@@ -130,9 +130,9 @@ System.out.println(Colorize.colorf("{t:bgreen}This is a green text. {reset}This 
 System.out.println(Colorize.colorf("{bg:bred}This is a text with bright red background."));
 
 // Method 4: Colorize.string() function
-System.out.println(Colorize.string("This is a red text.", CustomColorFormat.TColor.RED));
-System.out.println(Colorize.string("This is a red text with black background.", CustomColorFormat.TColor.RED, CustomColorFormat.BgColor.BLACK));
-System.out.println(Colorize.string("This is a red, underline text with black background.", CustomColorFormat.TColor.RED, CustomColorFormat.BgColor.BLACK, CustomColorFormat.TDecoration.UNDERLINE));
+System.out.println(Colorize.string("This is a red text.", TColor.RED));
+System.out.println(Colorize.string("This is a red text with black background.", TColor.RED, BgColor.BLACK));
+System.out.println(Colorize.string("This is a red, underline text with black background.", TColor.RED, BgColor.BLACK, TDecoration.UNDERLINE));
 ```
 See more examples [here](docs/COLORIZE-EXAMPLES.md)
 

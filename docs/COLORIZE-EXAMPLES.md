@@ -9,13 +9,13 @@
 CustomColorFormat ccf1 = new CustomColorFormat();
 
 // 2. The text color is given, the background color is default, no decoration
-CustomColorFormat ccf2 = new CustomColorFormat(CustomColorFormat.TColor.BLACK);
+CustomColorFormat ccf2 = new CustomColorFormat(TColor.BLACK);
 
 // 3. The text color is given, the background color is given, no decoration
-CustomColorFormat ccf3 = new CustomColorFormat(CustomColorFormat.TColor.BLACK, CustomColorFormat.BgColor.BRIGHT_RED);
+CustomColorFormat ccf3 = new CustomColorFormat(TColor.BLACK, BgColor.BRIGHT_RED);
 
 // 4. all values are given
-CustomColorFormat ccf4 = new CustomColorFormat(CustomColorFormat.TColor.BLACK, CustomColorFormat.BgColor.BRIGHT_RED, CustomColorFormat.TDecoration.UNDERLINE);
+CustomColorFormat ccf4 = new CustomColorFormat(TColor.BLACK, BgColor.BRIGHT_RED, TDecoration.UNDERLINE);
 
 // Methods:
 CustomColorFormat ccf = new CustomColorFormat(); -> // Empty constructor

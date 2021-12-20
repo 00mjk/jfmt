@@ -10,7 +10,7 @@ import com.oliverr.jfmt.formatter.Formatter;
 public class Main {
 
     private static final String github = "github.com/0l1v3rr/jfmt";
-    private static final String version = "v2.2.1";
+    private static final String version = "v2.3.0";
 
     public static void main(String[] args) {
         if(args.length == 0) {

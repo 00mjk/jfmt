@@ -23,11 +23,11 @@ start() {
     if [ $option == "1" ]
     then
         mvn clean install >&-
-        java -jar target/jfmt-2.2.1.jar basic-colors
+        java -jar target/jfmt-2.3.0.jar basic-colors
     elif [ $option == "2" ]
     then
         mvn clean install >&-
-        java -jar target/jfmt-2.2.1.jar 256
+        java -jar target/jfmt-2.3.0.jar 256
     else
         printf "${RED}Please provide a valid answer! Try again. ${RESET}\n\n"
         start
