@@ -17,7 +17,7 @@ public class Colorize {
         return colors.convertEnumTextColor(textColor)+colors.convertEnumBgColor(bgColor)+text+colors.getReset();
     }
 
-    public static String string(@NotNull String text, TColor textColor, BgColor bgColor, CustomColorFormat.TDecoration dec) {
+    public static String string(@NotNull String text, TColor textColor, BgColor bgColor, TDecoration dec) {
         if(text == null) return "";
         return colors.convertEnumTextColor(textColor)+colors.convertEnumBgColor(bgColor)+colors.convertEnumDecoration(dec)+text+colors.getReset();
     }

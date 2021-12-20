@@ -58,10 +58,6 @@ public class CustomColorFormat implements Serializable {
         return colors.getReset()+getColor()+getBgColor()+getDecoration()+"Test text"+colors.getReset();
     }
 
-    public enum TDecoration {
-        BOLD, UNDERLINE, REVERSED
-    }
-
     public String getColor() { return color; }
     public void setColor(TColor color) { this.color = colors.convertEnumTextColor(color); }
 

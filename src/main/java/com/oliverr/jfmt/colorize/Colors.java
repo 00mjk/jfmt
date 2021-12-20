@@ -87,10 +87,10 @@ public class Colors {
         return "";
     }
 
-    public String convertEnumDecoration(CustomColorFormat.TDecoration dec) {
-        if(dec == CustomColorFormat.TDecoration.BOLD) return bold;
-        if(dec == CustomColorFormat.TDecoration.REVERSED) return reversed;
-        if(dec == CustomColorFormat.TDecoration.UNDERLINE) return underline;
+    public String convertEnumDecoration(TDecoration dec) {
+        if(dec == TDecoration.BOLD) return bold;
+        if(dec == TDecoration.REVERSED) return reversed;
+        if(dec == TDecoration.UNDERLINE) return underline;
         return "";
     }
 
