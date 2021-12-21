@@ -27,6 +27,9 @@ public class ReplaceEntities {
         text = Replace.all(text, "$e", "∈");
         text = Replace.all(text, "$p", "∏");
         text = Replace.all(text, "$s", "∑");
+        text = Replace.all(text, "$x", "±");
+        text = Replace.all(text, "$2", "²");
+        text = Replace.all(text, "$3", "³");
         text = Replace.all(text, "$tm", "™");
         text = Replace.all(text, "$Ua", "↑");
         text = Replace.all(text, "$Da", "↓");

@@ -50,6 +50,9 @@ It supports [Entities](#entities-and-symbols), [Symbols](#entities-and-symbols),
   `$e`: Element of (∈)<br>
   `$p`: N-ary product (∏)<br>
   `$s`: N-ary summation (∑)<br>
+  `$x`: Plus-or-minus sign (±)<br>
+  `$2`: Superscript two (²)<br>
+  `$3`: Superscript three (³)<br>
   `$tm`: Trademark (™)<br>
   `$Ua`: Upwards Arrow (↑)<br>
   `$Da`: Downwards Arrow (↓)<br>
